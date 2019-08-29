@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: 'Lauren-Regular';
-  src: url('Lauren-Regular.eot') format('embedded-opentype');
+  src: url('Lauren-Regular.ttf') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -885,5 +885,3 @@ gaV3IxODy2bWFDYGFxcAKFIl6AAAAAEAAAAA) format('woff'), url('Lauren-Regular.ttf') 
   font-weight: normal;
   font-style: normal;
 }
-
-
