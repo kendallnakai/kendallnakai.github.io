@@ -1,12 +1,7 @@
 @charset "UTF-8";
 
 /* Font: Source Code Pro */
-@import url('fonts/source-code-pro-regular');
-@import url('fonts/source-code-pro-medium');
-@import url('fonts/source-code-pro-light');
-
-/* Font: Lauren*/
-@import url('fonts/lauren/styles.css');
+@import url('fonts/source-code-pro/styles.css');
 
 * {
   box-sizing: inherit;
@@ -18,11 +13,12 @@ body {
 }
 
 h1 {
-  font-family: "Lauren-Regular";
+  font-family: 'SourceCodePro-Regular';
   text-transform: lowercase;
   font-weight: normal;
   text-align: center;
-  font-size: 75px;
+  font-size: 50px;
+  letter-spacing: -5px;
   color: grey;
   margin-top: 0;
   margin-bottom: 0;

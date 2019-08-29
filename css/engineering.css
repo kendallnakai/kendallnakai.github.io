@@ -1,19 +1,18 @@
 @charset "UTF-8";
 
 /* Font: Source Code Pro */
-@import url('fonts/source-code-pro-regular');
-@import url('fonts/source-code-pro-medium');
-@import url('fonts/source-code-pro-light');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap');
 
-/* Font: Lauren*/
-@import url('fonts/lauren/styles.css');
+/* Font: Lato */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
 * {
   box-sizing: inherit
 }
 
 h1, h2 {
-  font-weight: bold;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: semi-bold;
   color: #7C7BAB;
 }
 
@@ -22,9 +21,14 @@ html {
   overflow-x: hidden;
 }
 
+body b {
+  color: black;
+}
+
 body {
-  font-family: 'SourceCodePro-Regular', monospace;
+  font-family: 'Lato', sans-serif;
   background-color: lightgrey;
+  color: #383838;
   line-height: 1;
 
   /* Padding */
@@ -72,4 +76,9 @@ body {
   padding-right: 8px;
   text-align: center;
   border-radius: 4px;
+}
+
+/* Icons and bullet points */
+.grey {
+  color: darkgrey;
 }

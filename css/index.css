@@ -1,17 +1,10 @@
 @charset "UTF-8";
 
 /* Font: Source Code Pro */
-@import url('fonts/source-code-pro-regular');
-@import url('fonts/source-code-pro-medium');
-@import url('fonts/source-code-pro-light');
+@import url('fonts/source-code-pro');
 
-/* Font: Source Code Pro */
-@import url('fonts/source-code-pro-regular');
-@import url('fonts/source-code-pro-medium');
-@import url('fonts/source-code-pro-light');
-
-/* Font: Lauren*/
-@import url('fonts/lauren/styles.css');
+/* Font: Lato */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
 body {
   /* background image */
@@ -30,17 +23,17 @@ body {
 }
 
 h1 {
-  font-family: 'Lauren-Regular';        /* scropt font for h1 */
+  font-family: 'SourceCodePro-Regular';        /* scropt font for h1 */
   font-weight: normal;                  /* sets font-weight back to non-bold */
-  text-transform: lowercase;            /* sets letters to all lowercase */
   color: white;                         /* sets font color */
-  line-height: 0.5;                     /* keeps h1 line space closer */
+  letter-spacing: -5px;
+  line-height: 1;                     /* keeps h1 line space closer */
   /* text-shadow: x-coordinate, y-coordinate, blur radius, color of shadow */
   text-shadow: 1px 2px 4px grey;
 }
 
 h3 {
-  font-family: 'SourceCodePro-Regular', monospace;
+  font-family: 'Lato', monospace;
   color: grey;
   line-height: 1;
 }
@@ -48,7 +41,6 @@ h3 {
 h1, h3 {
   margin: 0.25em;
 }
-
 
 /* translate3d(tx (abscissa), ty (ordinate), tz) */
 @keyframes body {
@@ -69,49 +61,52 @@ h1, h3 {
     margin-top: -20px;
   }
 
-  h1 { font-size: 75px; }
+  h1 { font-size: 50px; }
   h3 { font-size: 20px; }
 }
 
 /* iPhone 6/7/8 Mobile */
 @media only screen and (min-width: 375px) {
   .centered {
-    margin-top: 0px;
+    margin-top: -25px;
   }
 
-  h1 { font-size: 80px; }
-  h3 { font-size: 20px; }
+  h1 { font-size: 65px; }
+  h3 { font-size: 25px; }
 }
 
 /* iPhone X Mobile */
 @media only screen and (width: 375px) and (height: 812px) {
   .centered {
-    margin-top: 70px;
+    margin-top: 50px;
   }
 
-  h1 { font-size: 90px; }
-  h3 { font-size: 20px; }
+  h1 { font-size: 65px; }
+  h3 {
+    font-size: 25px;
+    line-height: 1.25;
+   }
 }
 
 /* Pixel Mobile Style */
 @media only screen and (min-width: 410px) {
   .centered {
-    margin-top: 130px;
+    margin-top: 120px;
   }
 
-  h1 { font-size: 75px; }
-  h3 { font-size: 20px; }
+  h1 { font-size: 60px; }
+  h3 { font-size: 25px; }
 }
 
 
 /* Plus Mobile Style */
-@media only screen and (min-width: 414px) {
+@media only screen and (width: 414px) {
   .centered {
-    margin-top: 75px;
+    margin-top: 50px;
   }
 
-  h1 { font-size: 100px; }
-  h3 { font-size: 20px; }
+  h1 { font-size: 75px; }
+  h3 { font-size: 25px; }
 }
 
 /* Tablet Style */
@@ -120,7 +115,7 @@ h1, h3 {
     margin-top: 150px;
   }
 
-  h1 { font-size: 100px; }
+  h1 { font-size: 75px; }
   h3 { font-size: 25px; }
 }
 
@@ -130,6 +125,6 @@ h1, h3 {
     margin-top: 120px;
   }
 
-  h1 { font-size: 100px; }
+  h1 { font-size: 75px; }
   h3 { font-size: 25px;}
 }
