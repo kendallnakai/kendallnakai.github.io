@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Font: Source Code Pro */
-@import url('fonts/source-code-pro/styles.css');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap');
 
 * {
   box-sizing: inherit;
@@ -10,10 +10,10 @@
 
 body {
   margin: 3;
+  font-family: 'Source Code Pro';
 }
 
 h1 {
-  font-family: 'SourceCodePro-Regular';
   text-transform: lowercase;
   font-weight: normal;
   text-align: center;
@@ -25,7 +25,6 @@ h1 {
 }
 
 h2 {
-  font-family: 'SourceCodePro-Regular', monospace;
   text-align: center;
   font-size: 18px;
   color: white;

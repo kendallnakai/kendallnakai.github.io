@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Font: Source Code Pro */
-@import url('fonts/source-code-pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap');
 
 /* Font: Lato */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  font-family: 'SourceCodePro-Regular';        /* scropt font for h1 */
+  font-family: 'Source Code Pro';        /* scropt font for h1 */
   font-weight: normal;                  /* sets font-weight back to non-bold */
   color: white;                         /* sets font color */
   letter-spacing: -5px;

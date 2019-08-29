@@ -1,10 +1,10 @@
 /* button css */
 
 /* Font: Source Code Pro */
-@import url('fonts/source-code-pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap');
 
 .button {
-  font-family: 'SourceCodePro-Regular';
+  font-family: 'Source Code Pro';
 
   /* button elements */
   background-color: grey;   /* button color */
