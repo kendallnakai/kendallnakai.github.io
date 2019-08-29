@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
-/* Font: Bebas Neue */
-@import url("https://use.typekit.net/thq7igq.css");
-
 /* Font: Source Code Pro */
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap');
+@import url('fonts/source-code-pro-regular');
+@import url('fonts/source-code-pro-medium');
+@import url('fonts/source-code-pro-light');
 
 /* Font: Lauren*/
 @import url('fonts/lauren/styles.css');
@@ -36,7 +35,7 @@ h1 {
 }
 
 h3 {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'SourceCodePro-Regular', monospace;
   color: grey;
   line-height: 1;
 }
