@@ -39,7 +39,7 @@ h2 {
   font-weight: normal;                  /* sets font-weight back to non-bold */
   color: white;                         /* sets font color */
   letter-spacing: -1px;
-  line-height: 0.8;                     /* keeps h1 line space closer */
+  line-height: 1;                     /* keeps h1 line space closer */
   /* text-shadow: x-coordinate, y-coordinate, blur radius, color of shadow */
   text-shadow: 1px 1px 4px grey;
 }
@@ -47,7 +47,7 @@ h2 {
 h3 {
   font-family: 'Lato', monospace;
   color: grey;
-  line-height: -1;
+  line-height: 1;
 }
 
 h1, h3 {
