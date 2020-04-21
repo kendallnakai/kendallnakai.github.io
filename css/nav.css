@@ -1,0 +1,39 @@
+nav {
+  overflow: hidden;
+}
+
+/* title */
+nav a {
+  float: left;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* float these items right */
+.nav-right {
+  float: right;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+a:before {
+  position: absolute;
+  content: "";
+  height: 2.5px;
+  width: 0;
+  background: #333;
+  transition: width 0.4s ease-in-out;
+  left: 0;
+  bottom: 0;
+}
+
+a:hover:before {
+  width: 100%;
+}
