@@ -72,6 +72,7 @@ figcaption {
   font-weight: 400;
   font-size: 14px;
 }
+
 article {
     display: grid;
     grid-template-columns: 1fr 600px 1fr;
@@ -87,4 +88,24 @@ article > blockquote {
     border-left: 3px solid black;
     padding-left: 20px;
     font-style: italic;
+}
+
+
+
+
+
+@media only screen and (max-width: 375px) {
+  article {
+      display: grid;
+      grid-template-columns: 1fr 310px 1fr;
+  }
+
+  img, iframe {
+    max-width: 300px;
+  }
+
+  iframe {
+    width: 300px;
+    height: 120px;
+  }
 }
