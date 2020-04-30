@@ -4,10 +4,29 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+  /*display: grid;
+  grid-template-columns: 1fr 600px 1fr;*/
 }
 
 p {
-  padding: 15px;
+  margin: 15px;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  letter-spacing: .006em;
+}
+
+h2, .link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.case-study {
+  margin: 15px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 img {
