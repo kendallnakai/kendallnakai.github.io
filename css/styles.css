@@ -1,35 +1,169 @@
-/* Nunito Sans */ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;800&display=swap');
-/* Source Sans */ @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
-/* Source Serif */ @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
-
+/* Serif */ @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+/* Sans */ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
+/* Monospace */ @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600;700&display=swap');
 body {
+  font-family: 'Lora', serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: 400px 200px;
+  margin-bottom: 40px;
+}
+
+.header-block {
+  display: grid;
+  /*grid-template-columns: 400px 200px;*/
+}
+
+h1, h2, h3, h4, h5, h6, p, button {
+}
+
+h1 {
   font-family: 'Nunito Sans', sans-serif;
-  /*display: grid;
-  grid-template-columns: 1fr 600px 1fr;*/
+  font-weight: 700;
+  font-size: 60px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+}
+
+h2:after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: auto;
+}
+
+h3 {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h4 {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+h5 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+h5, .link {
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #777;
+}
+
+h6 {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 0px;
 }
 
 p {
-  margin: 15px;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Lora', serif;
+  color: #777;
   font-size: 18px;
   letter-spacing: .006em;
 }
 
-h2, .link {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 400;
-  font-size: 24px;
+nav {
+  overflow: hidden;
 }
 
-.case-study {
-  margin: 15px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
+a {
+  text-decoration: none;
+  color: #333;
+}
+/* title */
+nav a {
+  float: left;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* float these items right */
+.nav-right {
+  float: right;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  float: left;
+  height: 50px;
+  width: 50px;
 }
 
 img {
-  display: block;
-  margin: 0 auto;
+  text-align: center;
+  max-height: 350px;
+  max-width: 600px;
+}
+
+br {
+  content:""
+  line-height:400%;
+}
+
+.card {
+  margin: 5px;
+  max-width: 135px;
+}
+
+.btn {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  color:#333;
+  background: transparent;
+  border: 4px solid #C2B2CD;
+  border-radius: 100px;
+  padding: 10px 40px 10px 40px;
+}
+
+.home {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.portfolio {
+  margin-top: 50px;
+}
+
+.experience {
+  margin-top: 75px;
+  margin-bottom: 40px;
+}
+
+.about {
+  margin-top: 75px;
+}
+
+.contact {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.me {
+  border-radius: 20px;
 }
