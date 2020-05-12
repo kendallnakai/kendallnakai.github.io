@@ -82,6 +82,10 @@ article > * {
     grid-column: 2;
 }
 
+a {
+  text-decoration: underline;
+  color: #333;
+}
 
 article > blockquote {
     margin: 0px 0;
