@@ -189,13 +189,13 @@ br {
 }
 
 @media only screen and (max-width: 414px) {
-  body {
+  .grid {
       display: grid;
-      grid-template-columns: 1fr 300px 1fr;
+      grid-template-columns: 1fr 375px 1fr;
   }
 
   img, iframe {
-    max-width: 290px;
+    max-width: 310px;
   }
 
   iframe {

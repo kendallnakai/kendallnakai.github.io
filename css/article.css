@@ -98,7 +98,7 @@ article > blockquote {
     font-style: italic;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 375px) {
   article {
       display: grid;
       grid-template-columns: 1fr 300px 1fr;
@@ -110,6 +110,22 @@ article > blockquote {
 
   iframe {
     width: 290px;
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 415px) {
+  article {
+      display: grid;
+      grid-template-columns: 0.75fr 350px 0.75fr;
+  }
+
+  img, iframe {
+    max-width: 315px;
+  }
+
+  iframe {
+    width: 315px;
     height: 120px;
   }
 }
