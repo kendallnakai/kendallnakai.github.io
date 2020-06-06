@@ -18,7 +18,8 @@ h2 {
 
 h3 {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Lora', serif;
+  color: grey;
+  font-family: 'Nunito Sans', serif;
   font-weight: 400;
   font-size: 20px;
   margin-top:10px;
@@ -96,6 +97,11 @@ article > blockquote {
     border-left: 3px solid black;
     padding-left: 20px;
     font-style: italic;
+}
+
+#full-image {
+  position: absolute !important;
+  width: 100vw !important;
 }
 
 @media only screen and (max-width: 375px) {

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kendall Nakai | ACM Membership Portal Redesign</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/article.css">
+
+  </head>
+
+  <article>
+    <a href="index.html">Back</a>
+
+    <h1>🔷 ACM Membership Portal Redesign</h1>
+    <h3>Redesigning the way 1000+ members interact with the ACM UC San Diego Membership Portal</h3>
+
+    <p>ACM was the first student organization at UC San Diego to create an in-house membership portal. It is now used by 1000+ members within ACM’s first year since founding. I was part of an ACM Design team project to redesign and create new features on the ACM Membership Portal for UC San Diego’s largest technology organization.</p>
+   <p>I was part of an ACM Design team project to redesign and create new features on the ACM Membership Portal for UC San Diego’s largest technology organization.</p>
+
+    <figure id="full-img"><img id="full-img" src="acm-design/membership-portal-redesign/my-part-time-job-dark.png"></figure>
+
+    <h2>The challenge</h2>
+    <p>The first membership portal was created when there were no exisiting users, design team, or design standards. After a year of deployment and the creation of ACM Design, I had the chance to reflect and strategize an improved membership portal. I wanted the redesign to be centered around <strong>two goals: member experience and efficiency.</strong> This brought me to the blanket problem statement:</p>
+    <blockquote>How might we design a more engaging membership portal for meaningful, fluid, member interactions?</blockquote>
+
+    <h2>Design process: The double-diamond</h2>
+    <p>We followed the double-diamond design process, diverging in our user interviews and prototypes and converging during two Design Jams per week to discuss results, make design decisions, and design together.</p>
+    <figure><img src="acm-design/membership-portal-redesign/double-diamond.png"></figure>
+    <figcaption>The Double Diamond design process</figcaption>
+
+    <h2>Initial user research: Discover member motivation</h2>
+    <p>I wanted to find clear paths to set for focusing on feature design.</p>
+    <p><strong>My research goals were to:</strong></p>
+    <ol>
+      <li>Identify how the portal has contributed to the ACM community</li>
+      <li>Discover user motivation for using the portal</li>
+      <li>Uncover user pain points</li>
+    </ol>
+
+    <h4>Surveys: Discovery</h4>
+    <p>I began by surveying volunteer users on the original membership portal user interface. Here are some of the key user statistics from the survey:</p>
+    <figure><img src="acm-design/membership-portal-redesign/user-research-stats.png"></figure>
+
+    <h4>Interviews: Deeper insights</h4>
+    <p>I then spearheaded interviewing members that took the survey to try to get qualitative answers to the survey statistics. Here is some of the key feedback received:</p>
+    <blockquote>There should never be a point where someone can’t find something ACM-related or has to ask about it — Sumeet</blockquote>
+    <blockquote>I wish members could have their own pages to host their own content — Ronak</blockquote>
+    <blockquote>It would be nice to have feedback forms. Members like to be heard — David</blockquote>
+    <blockquote>Competition is good. People at the top of the leaderboard make others want to compete with them— Ivy</blockquote>
+
+    <h4>Reframing the problem</h4>
+    <p>Based off of the survey statistics and the interview feedback I drew some conclusions:</p>
+    <ul>
+      <li>Events with check-in codes are the heart of ACM portal engagement</li>
+      <li>Since members spend ~1 minute on the portal and all members use the check-in feature, that is enough time to enter the check in code and confirm success but nothing more</li>
+      <li>At least half these members are attending events therefore interacting with the portal but it is not engaging enough to be used for more than check-in</li>
+      <li>The leadership board the second main source of membership portal’s interactivity between fellow members but only for those at the top</li>
+      <li>Members want connection and the ability to give feedback</li>
+    </ul>
+    <p><strong>Springing off the original problem statement to new goals, three key design challenges emerged:</strong></p>
+    <ol>
+      <li>How might we improve member connection and contribution?</li>
+      <li>How might we centralize ACM information?</li>
+      <li>How might we create seamless event interactions?</li>
+    </ol>
+    <p></p>
+    <blockquote>Let’s make this portal redesign the talk of the down — Jack, fellow designer</blockquote>
+    <blockquote>We want it to be the one-stop-shop ACM hub — Amy, fellow designer</blockquote>
+
+    <h2>Ideation and wireframes: Opportunities to improve</h2>
+    <p>The features of the original portal were Profile, Event check-in, Events, Leaderboard, About ACM, and a link to our Discord.</p>
+    <p>We wanted to retool these and create new features to initiate member engagement. I kept my personal goals of <strong>member experience and efficiency</strong> at all stages of looking for opportunities to improve the design.</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-low-fidelity.png"></figure>
+
+    <h2>Ideation into implementation: The membership portal redesign process</h2>
+    <p>The membership portal redesign was a passion project and labor of love for the members ACM. Here were my key feature changes based on issues I found in user testing and membership portal data:</p>
+    <figure><img src="acm-design/membership-portal-redesign/major-portal-changes.png"></figure>
+
+    <h4>Event check-in: Creating an optimized experience while connecting members</h4>
+    <p>When members attend events, they are able to check-into events through the portal. This check-in enables ACM to continue hosting events and is required by UC San Diego for ACM to receive funding from the school.</p>
+    <p>I found it takes a minimum of 8 taps and typing and a maximum of 22 taps and typing to go from a locked phone to a logged in/registered and checked in member.</p>
+    <p>ACM hosted 131 events with 3481 portal check-ins and 5125 estimated actual attendees during the 2019–2020 year leading up to the redesign. That means potentially 32.1% of attendees do not check in.</p>
+    <p>I concluded members were likely to not check in because:</p>
+    <ol>
+      <li>They did not see the check-in code</li>
+      <li>They do not have an ACM account</li>
+      <li>It is overcomplicated to check-in</li>
+    </ol>
+    <p>Based on these insights, I proposed a new way of checking in and interacting with members through <i>individual QR codes</i>.</p>
+    <p>Individual QR codes, or <i>buddy codes</i> would improve member initiation, engagement, experience, and retention because:</p>
+    <ul>
+      <li>There would always be someone to greet members at the door and check them in</li>
+      <li>If an event was a person’s first time interacting with ACM there would be someone there to introduce them to the portal</li>
+      <li>There would be reduced friction of typing in a code instead check-in would be scanning a code</li>
+    </ul>
+    <p>Member’s experience begins from the time they come to their first event. I want to inspire their confidence in being rewarded for attending in addition to what they gain from actual events. At the moment, people are mainly ACM returners at events. Since this check-in process is routine, I worry that someone who’s first time it is at an ACM event could feel left out.</p>
+    <p>Picture this: a person is coming to their first ACM event as a first year college student. They are not quite sure what to expect but are brave enough to come out. They walk up and someone from ACM warmly greets them and asks them to pull up their buddy code. They ask <i>“what buddy code?”</i> The ACM representative replies <i>“oh is this your first event? Let me explain the membership portal to you…”</i> This is a vastly different experience than potentially being ignored when walking   into an event and not understanding where to input a check-in code.</p>
+    <figure><img src="acm-design/membership-portal-redesign/buddy-code.png"></figure>
+    <p>Furthermore, buddy codes could bring members together. Since buddy codes represent individual profiles, it could scannable. Members could scan each other’s codes and bring up profiles to see badges, contact info, and what they do in ACM. This could add a touch of sociability by:</p>
+    <ul>
+      <li>Increasing friendly competition for the leaderboard and earning badges</li>
+      <li>Making it easier to get to know somebody by having buddy codes as an introduction piece</li>
+      <li>Making meeting people an activity (i.e. “Hey everyone meet 10 people around you by scanning buddy codes and you will receive diamonds to spend in the ACM Store!”)</li>
+    </ul>
+    <figure><img src="acm-design/membership-portal-redesign/event-check-in.png"></figure>
+    <p>Some points brought up against checking every person in at a time was that it would make it slower to get into large events or the person checking people in might have a camera malfunction. In this case, the event check-in code would be a QR code as a backup and could be scanned just like a buddy code.</p>
+
+    <h4>Member profiles: Incentivizing event attendance and profile use with interactive activity and badges</h4>
+    <p>Membership points are the current form of friendly competition between members that incentives them to attend events, rank up, and later spend their points on swag in the ACM Store.</p>
+    <p>I found there are 125 out of 1036 members that have over 100 points with the highest 1% around 500–900 points. On average, 10 points are awarded per event checked into. 88% of members have a point disparity that is difficult to catch up to.</p>
+    <p>We wanted to make the portal more interactive for and between members. Members have expressed enjoyment of friendly competition with the leaderboard. I posed the member profile problem statements: <i>How might we decrease the point disparity impact? How might we make all 1036 members feel relevant?</i></p>
+    <p>The solution was to create badges to display on member profiles and reset points at each quarter with there still being an “all-time” point system. These solved the point impact issues in that:</p>
+    <ul>
+      <li>Badges reward participation for anything from one event to a series to meeting new people by scanning buddy codes</li>
+      <li>The creative freedom in designing badges and creating rewards for them is limitless</li>
+      <li>Badges encourage use of profile, event attendance, and most importantly provide friendly competition more than just through points and the leaderboard</li>
+      <li>Point resets at the beginning of each quarter discourage feelings of not being able to catch-up in rank while still maintaining long-term competitiveness</li>
+    </ul>
+    <figure><img src="acm-design/membership-portal-redesign/member-profiles.png"></figure>
+
+    <h4>Event display: Making event details obvious with filters and color tagging</h4>
+    <p>ACM has children organizations called communities and they each host their own themed events in addition to the main ACM events.</p>
+    img
+    <figure><img src="acm-design/membership-portal-redesign/diamonds.png"></figure>
+    <figcaption>ACM Communities</figcaption>
+    <p>The interview results showed that members wanted more control of their events experience and there was lack of event communication. Some pain points were:</p>
+    <ul>
+      <li>Events were posted on Discord and Facebook but not always the portal</li>
+      <li>Event covers were too small to read on the portal and members had to scroll on individual cards to see concrete details</li>
+      <li>Members would like to see what events they had attended</li>
+      <li>It was not always clear whether an event as a workshop or not</li>
+      <li>A key design challenge was to consider how much emphasis should be given to what time and category of events.</li>
+    </ul>
+    <p>I added the most upcoming events on the home page and created a dedicated events page. The idea was to insert more event searching and filtering features without overcrowding the home page. To add clarity to what kind of event a member was viewing, I removed the event covers and replaced them with color-coded event cards containing main event information like title, location, and date.</p>
+    <p>To give event experience control back to the members, I added a search and filter system. Events could be filtered by community, type, quarter, and whether they were attended by the member. Since I could not optimize events on the member’s behalf without limiting their experience, I gave them the flexibility to view the kind of event they were interested in rather than the previous experience of being forced to view every event ACM hosted.</p>
+    <figure><img src="acm-design/membership-portal-redesign/events.png"></figure>
+
+    <h4>Member feedback: Encouraging members to voice their input</h4>
+    <blockquote>Members like to be heard — David</blockquote>
+    <p>There is a form linked to the ACM Discord for members to give general feedback or event suggestions. It has 0 responses. The lack of responses could be due to:</p>
+    <ul>
+      <li>Only 64.7% of members are a part of the ACM Discord (671 out of 1036)</li>
+      <li>Lack of obvious access and reason to fill out the form</li>
+    </ul>
+    <p>Surveys and interviews expressed giving general feedback would well-received but since there is already a way to, this likely means members do not know about the form.</p>
+    <p>To centralize information, I added internal feedback forms: quantitative feedback from events through simple reaction taps and qualitative feedback from detailed reports. Adding both allow flexibility in feedback for someone that only has a little time as well as a member that wants to give specific feedback. Both are incentivized with a reward of points for giving input. Feedback from events takes ~10 seconds and feels rewarding instantly. More detailed feedback feels impactful over time especially when put into implementation since each submission is to be viewed and acted upon by the ACM officer board.</p>
+    <p>I designed feedback forms with both member flexibility and privacy in their response. Event feedback a set of type-related positive and negative emoji response phrases. There is an option to add a custom response as well. General feedback is free-flowing. Since feedback can be sensitive, members might not want associate their name but still want to give input. The option to respond anonymously is default.</p>
+    <figure><img src="acm-design/membership-portal-redesign/member-feedback.png"></figure>
+
+    <h2>Keeping members in mind throughout all features of the design</h2>
+    <p>Member-first or formally, <i>human-centered design</i> was at the forefront of my mind when we were designing. This showed in the details where we pushed for a user-friendly portal through <i>microcopy, flexibility, and accessibility</i>. We wanted to make the portal as friendly and welcoming through an online medium as ACM is in person. Therefore, we wanted our typography, color, and overall <i>feel</i> be bold, poppy, and modern yet <i>inviting</i>.</p>
+    <h4>Microcopy</h4>
+    <p>Microcopy is the tidbits of copy found throughout the portal. This is shown from when they first attempt to create an account where we promise to protect their information and during onboarding where we show we are happy they joined ACM. The main page always has an accompanying message greeting them from <i>“Welcome”</i> when they first make an account to <i>“Good afternoon”</i> to <i>“We are so glad you’re here”</i> each addressing them by name. Interaction with the portal by making friends, going to events, and earning badges is responded to with fun button messages like <i>“Sweet</i>,” <i>“Cool,”</i> and <i>“Let’s go.”</i></p>
+    <h4>Flexibility</h4>
+    <p>ACM has a wide range of members: some members can attend a lot of events while others do not have time to, some members are outspoken and like to provide feedback while others enjoy enjoying things as they are, some members like to search and sort by keywords while others like tapping relevant topics, some members like to come and learn with just a little interaction while others like to mingle and interact. All types of interaction personalities I have witnessed in ACM online and in-person were accounted and <i>accommodated</i> for in the design. There’s an alternative to almost every way of interacting giving users flexibility in their experience.</p>
+    <h4>Accessibility</h4>
+    <p>While most of ACM is abled in every sense, we understand that UC San Diego has a diverse spectrum of talented students. We wanted to design for everyone in mind as much as possible. We still have a ways to go but our minimum font size for almost everything is follows the reccomended 14 pixels. Buttons are 35 pixels high but have a touch-target of the recommended 44 pixels. Colors are WCAG 2.0 compliant for contrast accessibility in dark mode at every size and weight and we are currently creating an accompanying palette to be accessible in light mode.</p>
+
+    <h2>Design decisions: Converging divergent ideas at Design Jams</h2>
+    <p>We diverged in design throughout the project in our user interviews and prototypes and converged during two Design Jams per week to discuss and empathize then make design decisions. Here are some views of the process from the original portal design through iterations of our designs to the final redesigned screens.</p>
+
+    <h4>Home</h4>
+    <p>The original portal only had the the profile card, check-in input, and events on the home page. Since ACM is mainly based around events I wanted to maintain that events and checking in were a focus on the membership portal while allowing users to be able to explore other features right when they entered. However, ACM offers a lot of content like writing and video pieces and we wanted members to be able to visually see their that points increase after checking into an event.</p>
+    <p>Taking these factors into account, I revised the layout to allow for clear check-in at two areas and redesigned the point-updating profile-card to look like the one the member would see on the leaderboard. We shrunk the events space and added a media section, both accessible by buttons and seen upon entry. Since the membership portal was now something design was integrated into,</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-home.png"></figure>
+    <p>I also wanted a way to communicate the way the portal works or new changes, kind of like onboarding and patch notes. It is not shown but when a member creates their account for the first time they are walked through the onboarding process. If there are updates we want the members to know about, I added a drop down notification that emerges from below the rainbow bar.</p>
+    <figure><img src="acm-design/membership-portal-redesign/onboarding.png"></figure>
+
+    <h4>Navigation</h4>
+    <p>There were a few methods of mobile navigation we considered:</p>
+    <ul>
+      <li><strong>Bottom-navigation</strong>: offers ease of access of controls at single taps but adds an additional bottom bar and is not compatible with desktop web design (it is a website, not an native app)</li>
+      <li><strong>Hamburger</strong>: familiar to web and allows access to different links at all parts of the portal but navigation options are not visible upon entry</li>
+      <li><strong>Buttons</strong>: shows visuals and the the most important buttons on a "dashboard" but does not allow for access to other pages unless a member returns to home page, limiting design to pages close to home</li>
+    </ul>
+    <p>We concluded on the hamburger navigations. While we like the ease of use at the bottom, this is web app, not a native application. We liked the buttons because of their ease of understanding, but concluded the navigation bar was most standard and did not limit the number of paths the user could take at any given time.</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-navigation.png"></figure>
+
+    <h4>Event covers</h4>
+    <p>The original main page mobile-view portal had single event cards both key information and an event cover. This was redundant because information was repeated which wasted space.</p>
+    <p>I iterated trying community color-coded event covers or event cards. In high-fidelity user testing, the covers were too small and seemed inconsistent while the fully colored cards were overwhelming to users that didn't understand the colors at first.</p>
+    <p>I compromised by adding the event cover to the details when a member clicks on the card and changing the color-coding to a border. I also added the <i>"This Week in ACM"</i> graphic since it displays the featured events.</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-event-display.png"></figure>
+
+    <h4>Event searching and filtering</h4>
+    <p>There was no event filter system so I wanted to add one to give members flexibility in finding events they were interested in. I experimented in drop-down menus similar to what clothing stores have for filtering and added a search feature since members expressed it would be useful during high-fidelity testing.</p>
+    <p>However, the the filters seem squished, the font was too small to be accessible, I wanted to avoid using two lines of filters since that is discouraged, and having both a search bar and filter on top of each other seemed redundant. I realized the search bar could be condensed and an all-encompassing filters modal could be added. I redesigned the selection boxes to be larger and we added colored checkboxes to the communities filter to make the link between the colored borders and communities clearer. Making the filters a larger modal also offered design flexibility for adding more filters.</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-event-filters.png"></figure>
+
+    <h4>Profile layout</h4>
+    <p>The original portal lacked features and member connectivity. We wanted to add badges and ways to reach out to members through their social media platforms and I wanted member activity for their reference and so members could see what events they shared. I experimented with different text alignments, badge layouts, and level-progress bars.</p>
+    <p>In the end we created a "featured" badge viewer with the flexibility to see all of them at once with a tap. Since profiles were meant to be more social now, I removed the level-progression and replaced it with overall diamonds and level to be the <i>flex</i>. I added a flexible bio section where members could decide to share their major, year, ACM community/officer position, or just a little about them.</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-profile.png"></figure>
+
+    <h4>Leaderboard</h4>
+    <p>The original portal features the top three leaderboard as large cards and the rest are a long list with a spreadsheet-style alternating display. I wanted to add personality and interactivity to the leaderboard through leaderboard cards since they convey member profiles can be accessed. I also wanted the currency of point to be more playful and incentivizing by expressing them as diamonds, the shape of the ACM logo. I initially placed the rank in circles but realized this only worked for the top 10 out of 1000+ ranks. I changed the rank to a curved bar above the profile picture to be able to hold up to 4 digits without compromising font size.</p>
+    <p>To reduce feelings of not being able to catch up in points from new to seasoned members, we decided to reset points at the beginning of each school quarter while having an ongoing all-time points board to reward members that had been to a lot of events. We experimented with being able to go to one's rank and the all-time leaderboard with the tap of a button or a switch. I discovered a solution would be to simply move the member's card to the top so they did not have to scroll down and add a color to distinguish their card from the rest. I also made previous quarter leaderboards available through a toggle so members did not feel like their progress was not lost immediately at the end of a quarter.</p>
+    <figure><img src="acm-design/membership-portal-redesign/iterations-leaderboard.png"></figure>
+
+    <h4>Light and dark mode</h4>
+    <p>We experimented with both light and dark mode for the redesign. Our community is mainly computing, so a majority expressed interest in having a dark mode. Ultimately, we created a light mode of the minimum viable product since light mode is more widely used in industry and out of concern for accessibility but there will be both views in the final membership portal release.</p>
+
+    <h2>Style guide and design system: Consistency and efficiency</h2>
+    <p>I wanted to maintain consistency and make it more efficient to edit components long term as well as create more ACM-standard graphics in the future. I created a modular design system with reusable components and their different states. I also created the style guide to set the foundation of ACM branding. You can find it at <a href="http://acmurl.com/design-jam">acmurl.com/design-jam</a>.</p>
+    <figure><img src="acm-design/membership-portal-redesign/style-guide.png"></figure>
+
+    <h2>Final reflections: More to come</h2>
+    <p>This was the largest project I have taken on and I hope there are many more like this to come. Designing the ACM Membership portal was fun, friendship-building, messy in the best way, and challenging. Most of all, I learned a lot while making an impact on ACM. Here are my key takeaways:</p>
+    <ol>
+      <li>Collaboration brings together and creates ideas beyond what an individual could ever create their my own</li>
+      <li>Letting go of ego is required for taking constructive critisism. On that note, ask anyone and everyone for feedback and absorb it all!</li>
+      <li>Having a development team accompanying a project is priceless since they can give feedback on how feasible a design's implementation is</li>
+      <li>Do not be pixel-perfect until the end! Empathize, design, iterate! Be willing to start-over!</li>
+    </ol>
+    <p>The ACM Membership Portal redesign my child. I going to nurture it for far longer than the three months I did of it's infancy. As the ACM Design team and I hand it off to development team we will work together more to evolve and polish the mobile visual and functional design to make it the most seamless member experience possible. We will also design a responsive accompanying desktop version and admin version.</p>
+    <p>If you would like to view the original membership portal, feel free to at <a href="http://members.acmucsd.com">members.acmucsd.com</a>. The membership portal redesign will be released in December 2020 so check back then!</p>
+    <p>It will be amazing to see the ACM Design team's work brought to life: a complete redesign and rebuild. I hope it will bring positive impact, engaging the 1000+ members of ACM in a friendly and fun way.</p>
+    <figure id="full-img"><img id="full-img" src="acm-design/membership-portal-redesign/my-part-time-job-light.png"></figure>
+
+  </article>
+</html>

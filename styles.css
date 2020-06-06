@@ -50,7 +50,6 @@ h1 {
 }
 
 h2 {
-  -webkit-font-smoothing: antialiased;
   font-family: 'Source Code Pro', monospace;
   display: flex;
   flex-direction: row;
@@ -95,7 +94,7 @@ h6 {
 }
 
 p {
-  -webkit-font-smoothing: antialiased;
+
   font-family: 'Lora', serif;
   color: #777;
   font-size: 18px;
