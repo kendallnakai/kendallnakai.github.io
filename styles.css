@@ -106,8 +106,8 @@ nav {
 }
 
 a {
-  text-decoration: none;
-  color: #333;
+  text-decoration: underline;
+  color: #aea0b8;
 }
 /* title */
 nav a {
