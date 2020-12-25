@@ -1,204 +1,134 @@
 /* Serif */ @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 /* Sans */ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
 /* Monospace */ @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
 body {
-  font-family: 'Lora', serif;
+  font-family: 'DM Sans', sans-serif;
+  background-color: #fff;
+  color: #444;
+  margin: 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 600px 1fr;
+nav a {
+  text-decoration: none;
+  color: #000
 }
 
-.block {
-  display: grid;
-  grid-template-columns: 400px 200px;
-  margin-bottom: 40px;
+table {
+  font-family: 'DM Sans', sans-serif;
+  color: #000;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  table-layout: fixed;
 }
 
-.header-block {
-  display: grid;
-  /*grid-template-columns: 400px 200px;*/
-}
-
-.profile-block {
-  display: grid;
-  grid-template-columns: 350px 25px 75px;
-}
-
-.profile-btn {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 16px;
-  color:#333;
-  background: transparent;
-  border: 4px solid #C2B2CD;
-  border-radius: 100px;
-  padding: 5px 10px 5px 10px;
-  width: 125px;
-  margin: 5px;
-}
-
-h1, h2, h3, h4, h5, h6, p, button {
+td, th {
+  padding: 15px;
+  border: 2px solid #000;
 }
 
 h1 {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
-  font-size: 60px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  font-size: 85px;
+  margin-top: 0; 
+  margin-bottom: 0; 
 }
 
 h2 {
-  font-family: 'Source Code Pro', monospace;
-  display: flex;
-  flex-direction: row;
-  align-items: right;
-}
-
-h2:after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #ccc;
-  margin: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  margin-top: 0; 
+  margin-bottom: 0; 
 }
 
 h3 {
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-h4 {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 30px;
   font-weight: 400;
-  margin-bottom: 0px;
-}
-
-h5 {
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 55px;
-}
-
-h5, .link {
-  font-family: 'Nunito Sans', sans-serif;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: #777;
-}
-
-h6 {
-  font-family: 'Source Code Pro', monospace;
-  font-weight: 400;
-  font-size: 20px;
-  margin-bottom: 0px;
 }
 
 p {
-
-  font-family: 'Lora', serif;
-  color: #777;
-  font-size: 18px;
-  letter-spacing: .006em;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 0; 
+  margin-bottom: 0; 
 }
 
-nav {
-  overflow: hidden;
-}
-
-a {
-  text-decoration: underline;
-  color: #aea0b8;
-}
-/* title */
-nav a {
-  float: left;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-/* float these items right */
-.nav-right {
-  float: right;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  float: left;
-  height: 50px;
-  width: 50px;
-}
-
-img {
-  text-align: center;
-  max-height: 350px;
-  max-width: 600px;
-}
-
-br {
-  content:""
-  line-height:400%;
-}
-
-.card {
-  margin: 5px;
-  max-width: 135px;
-}
-
-.btn {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 18px;
-  color:#333;
-  background: transparent;
-  border: 4px solid #C2B2CD;
-  border-radius: 100px;
-  padding: 8px 20px 8px 20px;
-  width: 150px;
-  margin: 5px;
-}
-
-.home {
-  margin-top: 200px;
-  margin-bottom: 100px;
-}
-
-.portfolio {
-  margin-top: 50px;
-}
-
-.experience {
-  margin-top: 75px;
-  margin-bottom: 40px;
-}
-
-.about {
-  margin-top: 75px;
-}
-
-.contact {
-  margin-top: 100px;
-  margin-bottom: 200px;
-}
-
-.me {
-  border-radius: 20px;
-  max-width: 250px;
-}
-
-@media only screen and (max-width: 414px) {
-  .grid {
-      display: grid;
-      grid-template-columns: 1fr 375px 1fr;
+  a {
+    font-size: 30px;
   }
 
-  img, iframe {
-    max-width: 310px;
+.wrapper {
+  max-width: 100%;
+  display: grid;
+  grid-gap: 0px;
+}
+
+.pad {
+  padding: 50px;
+}
+
+.pad-small {
+  margin: 50px;
+  margin-top: -1%;
+  margin-bottom: -1%;
+}
+
+/* padding everywhere except nav */ 
+.sidebar, .content, .footer {
+  padding: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+}
+
+@media screen and (min-width: 500px) {
+  .sidebar {
+    float: left;
+    width: 20%;
   }
 
-  iframe {
-    width: 290px;
-    height: 120px;
+  .content {
+    float: right;
+    width: 80%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+  }
+  
+  .header, .footer {
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+  }
+}
+
+.wrapper > * {
+  background-color: #fff;
+  color: #000;
+  /* needed for the floated layout*/
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
   }
 }
