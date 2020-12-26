@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="main.js"></script>
   </head>
 
   <body>
@@ -23,18 +24,21 @@
           </table>
         </nav>
 
-        <div class="pad">
-          <h1>KENDALLNAKAI</h1>
+        <div class="title">
+          <div class="pad">
+            <h1>KENDALLNAKAI</h1>
+          </div>
+          <hr>
+          <div class="pad-small">
+            <h3>design so others can blossom 🌸</h3>
+          </div>
+          <hr>
         </div>
-        <hr>
-        <div class="pad-small">
-          <h3>designer</h3>
-        </div>
-        <hr>
       </header>
 
       <aside class="sidebar">
-        <a name="portfolio"><h2>PORTFOLIO</h2></a>
+        <a name="portfolio"></a>
+        <h2>PORTFOLIO</h2>
       </aside>
       
       <article class="content">
@@ -58,15 +62,17 @@
 
       
       <article class="content">
-        <p>Currently researching @Design Lab > how to bridge communities by enabling novice or non-designers to create effective problem frames through adaptive scaffoling</p>
+        <p><mark><b><a href="https://designlab.ucsd.edu">@Design Lab ></a></b></mark> Designing to bridge communities by enabling novice + non-designers to create effective problem frames through adaptive scaffolding</p>
           <br>
-        <p>Developed a full-stack audit tool @Microsoft > learned about accessible design making a Figma voice plug-in, and discussed diversity and lived experiences during the pandemic</p>
+        <p><mark><b><a href="https://www.office.com">@Microsoft ></a></b></mark> Developed a full-stack audit tool, learned about accessible design making a Figma voice plug-in, and discussed diversity and lived experiences during the pandemic</p>
           <br>
-        <p>Founded a computing community of 1200+ @ACM UCSD > where we created an in-house member portal, a big-little program of lifelong friends, and drank 900+ cups of boba </p>
+        <p><mark><b><a href="https://cogsci.ucsd.edu/">@UC San Diego ></a></b></mark> Mentored 20 new designers through an real-world re-design process from user interviews to prototyping to a final case study.</p>
           <br>
-        <p>Taught 20 students how to code @iD Tech Camps > through GUI game development and between classwork we had lightsaber battles</p>
+        <p><mark><b><a href="https://acmucsd.com">@ACM UCSD ></a></b></mark> Founded UCSD's largest computing community, designed an in-house member portal for 1200+ members, initated a big-little program of lifelong friends, and served 900+ cups of boba </p>
           <br>
-        <p>Designed a theoretical satellite mission to Europa @Boeing > made carbon fiber skateboards, and introduced STEM to 600+ underrepresented high-schoolers</p>
+        <p><mark><b><a href="https://www.idtech.com/on-campus">@iD Tech Camps ></a></b></mark> Taught 20 students how to code through GUI game development and kept their morale up between classwork through lightsaber battles :-)</p>
+          <br>
+        <p><mark><b><a href="https://www.boeing.com/space/boeing-satellite-family/">@Boeing ></a></b></mark> Designed a theoretical satellite mission to Europa to determine if life was viable, made carbon fiber skateboards, and introduced STEM to 600+ underrepresented high-schoolers</p>
       </article>
 
       <aside class="sidebar">
@@ -74,43 +80,71 @@
       </aside>
 
       <article class="content">
-        <p>Pursing a degree in Cognitive Science: Human Computer Interaction with a Computer Science minor and Design minor. Here to extend knowledge through research and make technology more accessible through design. Designing so others can blossom. </p>
+        <img class="me" src="assets/me.jpg"></a>
+        <br> <br>
+
+        <p>Hi there! I'm Kendall and I'm pursing a degree in Cognitive Science: Human Computer Interaction with a Computer Science minor and Design minor. I'm here to extend knowledge through research and make technology more accessible through design. I love the cherryblossom emoji because it represents what I want to do through my work: design so others can blossom 🌸 </p>
+        <br>
+
+        <input onclick="revealInfo()" type="button" value="facts you won't find on my linkedin →" id="revealInfo" />
+        <div id="showInfo">
+          <p>🧋 You’ll often find me in my crocs drinking boba </p>
+          <br>
+
+          <p>🐦 My spirit animal is a hummingbird</p>
+        </div>
+
+        <br> <br>
+        <input onclick="revealCare()" type="button" value="what i care about →" id="revealCare" />
+        <div id="showCare">
+          <p>🌎 Accessible design</p>
+          <br>
+
+          <p>⭐ Being there for people's important moments </p>
+          <br>
+        </div>
+      
       </article>
 
       <aside class="sidebar">
-        <a name="about"><h2>CONTACT</h2></a>
+        <a name="contact"><h2>CONTACT</h2></a>
       </aside>
 
       <article class="content">
+        <p>let's chat over virtual boba! send me a <a href="calendar.html">calendar</a> invite!</p>
+        <br> <br>
+
         <p><b>email</b></p>
-        <p>kendallnakai@gmail.com</p>
+        <a href="mailto:kendallnakai@gmail.com"><p>kendallnakai[at]gmail.com</p></a>
         <br>
 
         <p><b>linkedin</b></p>
-        <p>/kendallnakai</p>
+        <a href="https://linkedin.com/in/kendallnakai"><p>/kendallnakai</p></a>
         <br>
 
-        <p><b>github</b></p>
-        <p>/kendallnakai</p>
-        <br>
+        <p><b>medium</b></p>
+        <a href="https://medium.com/@kendallnakai"><p>/kendallnakai</p></a>
+        <br> <br>
 
-        <p><b>more links ></b></p>
-        <div class="row">
-          <div class="column">
-            <p><b>photography</b></p>
-            <p>/photo</p>
-            <br>
+        <input onclick="revealContact()" type="button" value="more links →" id="revealContact" />
+        <div id="showContact">
+          <div class="row">
+            <div class="column">
+              <p><b>photography</b></p>
+              <a href="photo.html"><p>/photo</p></a>
+              <br>
 
-            <p><b>soundcloud</b></p>
-            <p>/kendallnakai</p>
-          </div>
-          <div class="column">
-            <p><b>medium</b></p>
-            <p>/kendallnakai</p>
-            <br>
+              <p><b>soundcloud</b></p>
+              <a href="https://soundcloud.com/kendallnakai"><p>/kendallnakai</p></a>
+            </div>
+            <div class="column">
+              <p><b>github</b></p>
+              <a href="https://github.com/kendallnakai"><p>/kendallnakai</p></a>
+              <br>
 
-            <p><b>instagram</b></p>
-            <p>/kendallnakai</p>
+              <p><b>instagram</b></p>
+              <a href="https://instagram.com/kendallnakai"><p>/kendallnakai</p></a>
+            </div>
           </div>
         </div>
       </article>
