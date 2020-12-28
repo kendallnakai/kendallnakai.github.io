@@ -1,15 +1,17 @@
 /* Serif */ @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 /* Sans */ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
 
 h1 {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Lora', serif;
-  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
   font-size: 32px;
 }
 
 h2 {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 24px;
   margin-top:20px;
@@ -17,9 +19,8 @@ h2 {
 }
 
 h3 {
-  -webkit-font-smoothing: antialiased;
   color: grey;
-  font-family: 'Nunito Sans', serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
   margin-top:-20px;
@@ -27,7 +28,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 18px;
   margin-top:10px;
@@ -44,19 +45,18 @@ iframe {
 }
 
 p {
-    line-height: 1.4;
+  line-height: 1.4;
 }
 
 p, ul, ol {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Lora', serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  letter-spacing: .006em;
 }
 
 ul, ol {
   text-align: left;
-  padding-left:1.2em;
+  padding-left: 1.2em;
   line-height: 2;
 }
 
@@ -73,7 +73,7 @@ figure {
 figcaption {
   text-align: center;
   color: #888;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 14px;
 }

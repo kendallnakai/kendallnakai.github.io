@@ -6,17 +6,55 @@
 body {
   font-family: 'DM Sans', sans-serif;
   background-color: #fff;
-  color: #444;
+  font-size: 16px;
+  color: #000;
   margin: 0;
 }
 
-a {
-  color: #000; 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 300px 3fr 1fr;
 }
 
-nav a {
-  text-decoration: none;
-  color: #000
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 4em;
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+td, tr {
+  padding: 15px;
+  border: 2px solid #000;
 }
 
 table {
@@ -28,87 +66,79 @@ table {
   table-layout: fixed;
 }
 
-td, th {
-  padding: 15px;
-  border: 2px solid #000;
-}
-
 mark {
   background-color: #fadadd;
 }
 
-h1 {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 85px;
-  margin-top: 0; 
-  margin-bottom: 0; 
+a {
+  color: #000; 
 }
 
-h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 60px;
-  font-weight: 700;
-  margin-top: 0; 
-  margin-bottom: 0; 
-}
-
-h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-}
-
-p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  margin-top: 0; 
-  margin-bottom: 0; 
+nav a {
+  text-decoration: none;
+  color: #000
 }
 
 .link {
-  font-size: 30px;
-}
-
-.wrapper {
-  max-width: 100%;
-  display: grid;
-  grid-gap: 0px;
+  font-size: 1.2em;
 }
 
 .title {
-  margin-top: 10%; 
-  margin-bottom: 20%; 
+  margin-top: 50%; 
+  margin-bottom: 50%; 
 }
 
-.pad {
-  padding: 50px;
-  margin-bottom: -5%;
+.box-element-left, .box-element-right {
+  border-width: 2px;
+  margin-bottom: 4vh; 
+  padding: 5vh;
 }
 
-.pad-small {
-  margin: 50px;
-  margin-top: -1%;
-  margin-bottom: -1%;
+.box-element-left {
+  border-top-style: solid;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: solid;
 }
 
-/* padding everywhere except nav */ 
-.sidebar, .content, .footer {
-  padding: 50px;
+.box-element-right {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: none;
 }
 
-* {
-  box-sizing: border-box;
+.left-box {
+  float: left; 
+  width: 85%; 
 }
 
-.row {
-  display: flex;
+.right-box {
+  float: right; 
+  width: 15%; 
 }
 
-.me {
-  max-width:30%;
-  height: auto; 
+.box-link {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.home {
+  width: 1000px;
+}
+
+.column-left {
+  float: left; 
+  width: 40%; 
+}
+
+.column-right {
+  float: right; 
+  width: 60%; 
+}
+
+.square {
+  max-width: 70%;
 }
 
 #showContact, #showInfo, #showCare {
@@ -120,7 +150,7 @@ p {
 #revealContact, #revealInfo, #revealCare {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.2em;
   cursor: pointer;
   margin: 0;
   padding: 0; 
@@ -129,43 +159,68 @@ p {
   background-color: Transparent;
 }
 
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
+@media only screen and (max-width: 375px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 3fr 1fr;
+  }
 }
 
-@media screen and (min-width: 500px) {
-  .sidebar {
-    float: left;
-    width: 20%;
+@media screen and (min-width: 2000px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 400px 3fr 1fr;
   }
 
-  .content {
-    float: right;
-    width: 80%;
-  }
-
-  .wrapper {
-    grid-template-columns: 1fr 3fr;
+  h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 6em;
+    margin-top: 0; 
+    margin-bottom: 0; 
   }
   
-  .header, .footer {
-    grid-column: 1 / -1;
-    /* needed for the floated layout */
-    clear: both;
+  h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 0; 
+    margin-bottom: 0; 
   }
-}
+  
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5em;
+    font-weight: 400;
+  }
+  
+  p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    margin-top: 0; 
+    margin-bottom: 0; 
+  }
 
-.wrapper > * {
-  background-color: #fff;
-  color: #000;
-  /* needed for the floated layout*/
-}
-
-/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
-@supports (display: grid) {
-  .wrapper > * {
-    width: auto;
+  #showContact, #showInfo, #showCare {
+    width: 100%;
+    margin-top: 20px;
+    display: none; 
+  }
+  
+  #revealContact, #revealInfo, #revealCare {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    cursor: pointer;
     margin: 0;
+    padding: 0; 
+    border: none; 
+    outline: none; 
+    background-color: Transparent;
+  }
+
+  .link {
+    font-size: 2.5em;
   }
 }
