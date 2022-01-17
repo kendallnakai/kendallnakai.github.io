@@ -9,12 +9,203 @@
     <script src="script/index.js"></script>
   </head>
 
+  <script type="text/javascript">
+    if (screen.width <= 1050) {
+      document.location = "mobile.html";
+    }
+  </script>
+
   <body>
+    <header>
+      <nav>
+        <table>
+          <tr>
+            <td><a class="link" href="#portfolio">portfolio</a></td>
+            <td><a class="link" href="#experience">experience</a></td>
+            <td><a class="link" href="#about">about</a></td>
+            <td><a class="link" href="assets/Kendall-Nakai-Resume.pdf">resume</a></td>
+          </tr>
+        </table>
+      </nav>
+    </header>
     <div class="grid">
+      
+      <div class="left">
+      </div>
+
+      <div class="middle">
         <div class="title">
-            <h1>KENDALLNAKAI</h1>
-            <p>portfolio work in progress!!</p>
+          <h1>KendallNakai</h1>
+          <p>design so others can blossom 🌸</p>
         </div>
-  </body>
+      
+        <a name="portfolio"></a>
+        <h2>Portfolio</h2>
+        <div class="box">
+          <a href="acm.html"><p>ACM Membership Portal ></p></a>
+        </div>
+        <div class="box">
+          <a href="yelp.html"><p>Yelp Messaging Redesign ></p></a>
+        </div>
+        <div class="box">
+          <a href="daily-ui.html"><p>Daily UI Challenge ></p></a>
+        </div>
+        <br> <br> <br>
+
+        <a name="experience"></a>
+        <h2>Experience</h2>
+        <p><mark><b>@Design Lab</b></mark> Researched the impact of scaling up the <a href="https://bit.ly/ucsd-cogsci-design-guide">"Hidden Currciulum"</a> of design to undergraduates / Advised by <a href="https://pg.ucsd.edu/"> Philip Guo</a></p>
+          <br>
+        <p><mark><b>@ProtoLab</b></mark> Researched design process decomposition and adaptive scaffolding / Advised by <a href="http://stevemacn.github.io"> Stephen MacNeil</a> and <a href="https://spdow.ucsd.edu"> Steven Dow</a></p>
+          <br>
+        <p><mark><b>@Microsoft</b></mark> Designed and developed a front-end <a href="https://kendallnakai.medium.com/my-summer-2021-internship-reflection-f12e8ff1a49c"> insights dossier</a> and full-stack <a href="https://kendallnakai.medium.com/summer-intern-reflections-ee432dc3c364"> permissions audit tool</a> for 20,000+</p>
+          <br>
+        <p><mark><b>@ACM UCSD</b></mark> Founded <a href="https://acmucsd.com">UCSD's largest computing community</a>, designed an <a href="https://kendallnakai.medium.com/acm-design-ac2cd302c94e">an in-house membership portal</a> for 1000</p>
+          <br>
+
+        <input onclick="revealJobs()" type="button" value="other experience →" id="revealJobs" />
+        <div id="showJobs">
+          <p><mark><b>@Boeing</b></mark> Created payload and bus system designs for a theoretical satellite mission to Europa to determine if life was viable</p>
+          <br> 
+
+          <p><mark><b>@iD Tech Camps</b></mark> Taught 20 students how to code through in Java through GUI game development</p>
+          <br>
+
+          <p><mark><b>@UC San Diego</b></mark> Mentored 50 student designers through the UX/UI app design process as a TA for a <a href="https://pg.ucsd.edu/publications/hci-ux-course-that-prepares-students-for-industry-jobs_SIGCSE-2022.pdf"> design class </a></p>
+          <br>
+
+          <p><mark><b>@Chick-Fil-A</b></mark> Served 500+ guests per day, delivering infinite smiles and an order accuracy of 96% / <a href="https://kendallnakai.medium.com/reflection-a-year-of-working-at-chick-fil-a-e71389c579b7">Reflection</a></p>
+          <br>
+
+          <p><mark><b>@Tennis Anyone</b></mark> Coached tennis classes to recreation students </p>
+          <br>
+
+          <p><mark><b>@Girl Scouts</b></mark> Earned my Girl Scout Gold Award through making a <a href="https://www.stbonaventure.org/bulletin-downloads/153-august-20-2017-20th-sunday-in-ordinary-time/file#page=3">series of videos</a> that brought a community together</a></p>
+          <br>
+        </div>
+        <br> <br> <br>
+
+        <a name="about"></a>
+        <h2>About</h2>
+        <img class="square" src="img/me.jpg">
+
+        <p>Hi there, I'm Kendall 🌸</p>
+        <br>
+        <p>I am graduating in 2022 from UC San Diego with a B.S. in Cognitive Science: Human-Computer Interaction (HCI) with minors in Computer Science and Design.</p>
+          <br>
+        <p>I'm interested in HCI and Design research, I watch the sunset daily, and am always seeking the perfect cup of boba milk tea.</p>
+          <br>
+          
+          <div>
+          <input onclick="revealContact()" type="button" value="social links →" id="revealContact" />
+          <div id="showContact">
+            <div class="row">
+              <div class="column-left">
+                <p><b>instagram</b></p>
+                <a href="https://instagram.com/kendallnakai"><p>/kendallnakai</p></a>
+                <br>
+  
+                <p><b>youtube</b></p>
+                <a href="https://www.youtube.com/kendallnakai"><p>/kendallnakai</p></a>
+                <br>
+  
+                <p><b>spotify</b></p>
+                <a href="https://open.spotify.com/user/kenda11joy?si=a2d6d1d01e8d4cfd"><p>/kendallnakai</p></a>
+                <br>
+  
+                <p><b>strava</b></p>
+                <a href="https://www.strava.com/athletes/49243091"><p>/activity</p></a>
+              </div>
+              <div class="column-right">
+                <p><b>medium blog</b></p>
+                <a href="https://medium.com/@kendallnakai"><p>/kendallnakai</p></a>
+  
+  
+                <p><b>photography</b></p>
+                <a href="assets/photo.html"><p>/photo</p></a>
+                <br>
+               
+                <p><b>soundcloud</b></p>
+                <a href="https://soundcloud.com/kendallnakai"><p>/kendallnakai</p></a>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+          </div>
+          <br>
+
+        <div>
+        <input onclick="revealNews()" type="button" value="what's popping →" id="revealNews" />
+        <div id="showNews">
+          <p>Last updated: January 2022</p>
+          <br>
+          <p>🏃‍♀️ Currently trying out sports including archery, aerial silks, boxing, karate, tennis, swimming, and surfing</p>
+          <br>
+
+          <p>📚 Submitting my first papers to academic conferences in Winter</p>
+          <br>
+
+          <p>🎒 Solo backpacking Europe in Spring</p>
+          <br>
+
+          <p>🌆 Moving to Seattle, Washington in Summer</p>
+        </div>
+      </div>
+      <br>
+
+      <div>
+        <input onclick="revealInfo()" type="button" value="fun facts →" id="revealInfo" />
+        <div id="showInfo">
+          <p>📸 I've made One Second a Day recap videos for <a href="https://youtu.be/Y9m1cyaG4Ag">2021</a>, <a href="https://youtu.be/QEJcKR205iM">2020</a>, <a href="https://youtu.be/Jbw7RLLFuJ0">2019</a>, <a href="https://youtu.be/JAhMqydGEuE">2018</a>, <a href="https://youtu.be/FLyUPw8IYiQ">2017</a>, and <a href="https://youtu.be/AKnn2wH7Vyw">2016</a></p>
+          <br>
+
+          <p>🧋 You’ll often find me in my crocs drinking boba and serving 900+ cups to ACM and IEEE folks</p>
+          <br>
+
+          <p>🐦 My spirit animal is a hummingbird because I'm energetic and need to eat every 20 minutes to survive</p>
+          <br>
+
+          <p>🌊 I'm a SoCal native which means I grew up at the beach and Disneyland</p>
+          <br>
+
+          <p>🎨 I love experimenting with colors on my hair! I've dyed it silver, blonde, blue, green, purple, and pink</p>
+        </div>
+      </div>
+      <br>
+
+      <div>
+        <input onclick="revealCare()" type="button" value="things i care about →" id="revealCare" />
+        <div id="showCare">
+          <p>🌎 Improving everyday life through design</p>
+          <br>
+
+          <p>❤️ Fostering welcomeness through inclusivity</p>
+          <br>
+
+          <p>⭐ Being there for people's important moments </p>
+        </div>  
+      </div>      
+        <br> <br>
+
+        <h2>Contact</h2>
+
+        <p>Let's chat over bubble milk tea!</p>
+        <br> <br>
+
+        <p><b>email</b></p>
+        <a href="mailto:kendallnakai@gmail.com"><p>kendallnakai[at]gmail.com</p></a>
+        <br>
+
+        <p><b>linkedin</b></p>
+        <a href="https://linkedin.com/in/kendallnakai"><p>/kendallnakai</p></a>
+        <br> <br>
+      </div>
+
+        <div class="right">
+        </div>
+        <br> <br> <br>
+      </div>
+</body>
 
 </html>
