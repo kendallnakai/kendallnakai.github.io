@@ -10,11 +10,12 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 300px 3fr 1fr;
+  grid-template-columns: 1fr 600px 1fr;
 }
 
 h1 {
   font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase; 
   font-weight: 700;
   font-size: 4em;
   margin-top: 0; 
@@ -23,10 +24,11 @@ h1 {
 
 h2 {
   font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase; 
   font-size: 2.5em;
   font-weight: 700;
   margin-top: 0; 
-  margin-bottom: 0; 
+  margin-bottom: 0.15em; 
 }
 
 h3 {
@@ -85,6 +87,13 @@ nav a {
   margin-bottom: 50%; 
 }
 
+.box {
+  border-width: 2px;
+  margin-bottom: 4vh; 
+  padding: 5vh;
+  border-style: solid;
+}
+
 .box-element-left, .box-element-right {
   border-width: 2px;
   margin-bottom: 4vh; 
@@ -135,16 +144,16 @@ nav a {
 }
 
 .square {
-  max-width: 70%;
+  max-width: 50%;
 }
 
-#showContact, #showInfo, #showCare {
+#showContact, #showInfo, #showCare, #showJobs, #showNews {
   width: 100%;
   margin-top: 20px;
   display: none; 
 }
 
-#revealContact, #revealInfo, #revealCare {
+#revealContact, #revealInfo, #revealCare, #revealJobs, #revealNews {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 1.2em;
@@ -190,24 +199,6 @@ nav a {
     font-weight: 400;
     margin-top: 0; 
     margin-bottom: 0; 
-  }
-
-  #showContact, #showInfo, #showCare {
-    width: 100%;
-    margin-top: 20px;
-    display: none; 
-  }
-  
-  #revealContact, #revealInfo, #revealCare {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 2.5em;
-    cursor: pointer;
-    margin: 0;
-    padding: 0; 
-    border: none; 
-    outline: none; 
-    background-color: Transparent;
   }
 
   .link {
