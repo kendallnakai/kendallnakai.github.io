@@ -35,6 +35,7 @@ td, tr {
 h1 {
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
+    text-transform: uppercase; 
     font-size: 2.5em;
     margin-top: 0; 
     margin-bottom: 0; 
