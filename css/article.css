@@ -44,6 +44,7 @@ iframe {
 
 p {
   line-height: 1.4;
+  margin-bottom: -2px;
 }
 
 p, ul, ol {
