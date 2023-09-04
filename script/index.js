@@ -52,3 +52,25 @@ function revealContact() {
       document.getElementById("revealNews").value="what's popping ↓";
     }
   }
+
+  function reveal2023() {
+    let x = document.getElementById("show2023");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      document.getElementById("reveal2023").value="2023 →";
+    } else {
+      x.style.display = "block";
+      document.getElementById("reveal2023").value="2023 ↓";
+    }
+  }
+
+  function reveal2022() {
+    let x = document.getElementById("show2022");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      document.getElementById("reveal2022").value="2022 →";
+    } else {
+      x.style.display = "block";
+      document.getElementById("reveal2022").value="2022 ↓";
+    }
+  }

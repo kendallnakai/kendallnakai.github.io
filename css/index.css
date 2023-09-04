@@ -147,13 +147,18 @@ nav a {
   max-width: 50%;
 }
 
-#showContact, #showInfo, #showCare, #showJobs, #showNews {
+#showContact, #showInfo, #showCare, #showJobs, #showNews, #show2022, #show2023 {
   width: 100%;
   margin-top: 20px;
   display: none; 
 }
 
-#revealContact, #revealInfo, #revealCare, #revealJobs, #revealNews {
+#show2022, #show2023 {
+  margin-left: 20px;
+}
+
+
+#revealContact, #revealInfo, #revealCare, #revealJobs, #revealNews, #reveal2022, #reveal2023 {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 1.2em;
@@ -163,4 +168,8 @@ nav a {
   border: none; 
   outline: none; 
   background-color: Transparent;
+}
+
+#reveal2022, #reveal2023 {
+  margin-left: 20px;
 }
