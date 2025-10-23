@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   display: flex;
   justify-content: center;
+  text-transform: lowercase;
 }
 
 .grid {
@@ -20,7 +21,7 @@ body {
 }
 
 .middle {
-  max-width: 575px;
+  max-width: 525px;
   padding-left: 20px;
   padding-right: 20px;
 }
