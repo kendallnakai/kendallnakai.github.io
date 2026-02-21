@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>A2: Exploratory Visual Analysis — Corporate Landlords & Evictions</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+/* Embedded from css/index.css */
+/* Fonts are loaded via link in the HTML for better reliability */
+body {
+	font-family: 'Lora', serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	justify-content: center;
+	color: #111;
+	line-height: 1.5;
+}
+
+/* Reset default page spacing so centering works predictably */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.grid {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.square {
+	width: 200px;
+	height: 200px;
+}
+
+.middle {
+	max-width: 700px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 2rem auto;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'DM Sans', sans-serif;
+	margin-top: 0.2em;
+}
+
+/* Apply DM Sans to section headings as well for consistent look */
+h2, h3 {
+	font-family: 'DM Sans', sans-serif;
+	margin-bottom: 0.35em;
+}
+
+a {
+	color: black;
+}
+
+/* Images and figures scale to the container */
+main.middle figure {
+	margin: 1.2em 0;
+}
+main.middle img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0.5em auto;
+}
+
+/* Ensure figures don't overflow the `.middle` container */
+main.middle figure {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* If large images exist, preserve their aspect ratio and contain them */
+main.middle img.large {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+figcaption {
+	font-size: 0.9rem;
+	color: #444;
+	text-align: center;
+	margin-top: 0.4em;
+}
+/* Modal for image lightbox */
+#image-modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.75);
+	z-index: 9999;
+	padding: 2rem;
+}
+#image-modal.open {
+	display: flex;
+}
+#image-modal img {
+	max-width: 100%;
+	max-height: 100%;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+	border-radius: 4px;
+}
+#image-modal .close-btn {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: rgba(255,255,255,0.9);
+	border: none;
+	padding: 0.4rem 0.6rem;
+	font-size: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+		</style>
+</head>
+<body>
+	<main class="middle">
+		<h1>A2: Exploratory Visual Analysis</h1>
+        <h2><em>Subtheme: Corporate Landlords &amp; Evictions</em></h2>
+
+		<h2>Questions and motivations</h2>
+		<p>I have to admit, the questions I started out with weren’t possible to answer because the data available wouldn’t help answer. I started out with the following questions:</p>
+		<ul>
+			<li><strong>Q1</strong>: Do corporate landlords file for evictions more than non-corporate landlords?</li>
+			<li><strong>Q2</strong>: What proportion of renters are people of color? Motivation and source: Based on the HomesForAll background reading, the highest concentration of evictions are also in neighborhoods with the highest concentration of renters of color.</li>
+			<li><strong>Q3</strong>: What is the median amount owed in Boston? What is that proportion to the average income? How about the average income of people of color? Motivation and source: Based on the NYT background reading, in Richmond, 64% of all 113,000 renters behind on rent are people of color and the median amount owed is $686.</li>
+		</ul>
+
+		<p>However, as I explored the data available, I realized I would have to pivot. These ended up being my questions:</p>
+		<ul>
+			<li><strong>Q1</strong>: What is the relationship between corporate ownership and owner occupancy? <em>Motivation / Source</em></li>
+			<li><strong>Q2</strong>: What is the makeup of non-dominant populations and where do they live in Boston? <em>Motivation / Source</em></li>
+			<li><strong>Q3</strong>: Are residences recently sold in areas with dominant populations lined up in time with corporate ownership increase? <em>Motivation / Source</em></li>
+		</ul>
+
+		<h2>Phase 1: Data overview and exploration</h2>
+		<h3>1.1 Corporate ownership and owner occupancy</h3>
+		<p>First, I explored the <code>Corp_Ownership_and_Occupancy_Over_Time.csv</code>. Since there were only a few keys like <code>neighborhood</code>, <code>year</code>, <code>own_occ_rate</code>, and <code>corp_own_rate</code>, I was interested in what the corporate ownership and occupancy and corporate ownership rate was year over year averaged over all of Boston. I mapped this through the following line graphs from the data available for each neighborhood for 20 years 2004–2024:</p>
+		<figure aria-label="Corporate ownership and occupancy over time — Boston average" role="img">
+			<img src="A2-assets/corp_ownership_and_occupancy_over_time_boston_avg.png" alt="Corporate ownership and occupancy over time — Boston average">
+		</figure>
+
+        I then thought it would be interested to see this data individually per neighborhood, so mapped owner occupancy and corporate ownership rate over time on different graphs:
+		<figure aria-label="Corporate ownership and occupancy over time — by neighborhood" role="img">
+			<img src="A2-assets/corp_ownership_and_occupancy_over_time_by_neighborhood.png" alt="Corporate ownership and occupancy over time — by neighborhood">
+		</figure>
+
+		<p>In observing the graphs, corporate ownership on the average whole of Boston has increased steadily, then sharply over time since 2004, growing from 5.5% to 25.3% over 20 years (19.8%). The most rapid increase was 2019–2024, growing from about 13.6% to 25.3% (11.7%) in just 5 years as opposed to 8.1% in the first 15 years (2004–2019). Owner occupancy on the average whole of Boston has decreased by 5.5% over 20 years, from 44% to 38%.</p>
+
+		<p>As of 2024, standout high <strong>owner-occupancy rates</strong> included neighborhoods like West Roxbury (66%), Roslindale (63%), Hyde Park (63%), Mattapan (55%), and Jamaica Plain (52%). Fenway (16%), Longwood (18%), and Allston (22%) had a standout low owner-occupancy rate.</p>
+
+		<p>Standout high <strong>corporate ownership rates</strong> included South Boston Waterfront (35%), Fenway (36%), Downtown (24%), and Longwood (34%). Hyde Park (12%), West Roxbury (13%), Roslindale (14%), Mattapan (14%), and Jamaica Plain (17%) had a standout low corporate ownership rate as of 2024.</p>
+
+		<h3>1.2 Census data of population race and places of living</h3>
+		<p>Next, I explored the <code>Census_and_Corp_Ownership_and_Occupancy_Over_Time.csv</code>. Since this had census data, there were several more factors, including race and place of living.</p>
+		<p>I observed how many people lived in each neighborhood, ordering the neighborhoods in population from largest to smallest with a bar chart:
+		<figure aria-label="Population by neighborhood and race — stacked bars" role="img">
+			<img src="A2-assets/population_by_neighborhood_and_race_stacked_bars.png" alt="Population by neighborhood and race — stacked bars">
+		</figure>
+        Boston as a whole has a total population of 638,173. Dorchester is the largest neighborhood with 122,191 people (19.1%). The next two largest neighborhoods are Roxbury (54,905) and Brighton (48,330). Longwood is the smallest neighborhood with 4,096 people (0.6%). The next two smallest are South Boston Waterfront (5,579) and Chinatown (7,143).</p>
+		
+        <p>I wanted to see the racial breakdown of Boston as a whole. I used stacked bars in the first graph to express race composition by neighborhood. I also used a pie chart to show the overall racial composition. From this, I find the largest race is White (43.9%, 280,458). The smallest race is AIAN (0.1%, 947).</p>
+		<figure aria-label="Population by race — pie chart" role="img">
+			<img src="A2-assets/population_by_race_pie_chart.png" alt="Population by race — pie chart">
+		</figure>
+
+		<p>The census considers places of living to be <a href="https://www.census.gov/topics/income-poverty/poverty/guidance/group-quarters.html" target="_blank" rel="noopener">housing units or group quarters</a>. The keys in the csv distinguish group quarters as <code>nursing</code>, <code>college</code>, <code>correctional</code>, <code>juvinile</code>, <code>military</code>, <code>other_inst</code>, <code>other_noninst</code>. Housing units make up ~93.3% of the population and the largest population of the group quarters is <code>college</code> which accounts for ~5.1%.</p>
+		<figure aria-label="Population by housing — stacked bars" role="img">
+			<img src="A2-assets/boston_population_by_housing_stacked_bars.png" alt="Population by housing — stacked bars">
+		</figure>
+        <p>However, from this stacked bar chart, for each neighborhood, we can see households strongly dominate the housing composition so much so that the other categories aren't visible. This sankey chart paints a better picture for Boston overall so the numbers are at least visible, despite the lines for <code>juvenile</code>, <code>correctional</code>, <code>other_inst</code>, and <code>military</code> being equally thin.</p>
+        <figure aria-label="Population by type of housing" role="img">
+			<img src="A2-assets/population_by_type_of_housing.png" alt="Population by type of housing">
+		</figure>
+
+		<h3>1.3 Residential building and sales</h3>
+		<p>Finally, I explored <code>A2_EDA_Residential.csv</code> which dataset included the most fields such as <code>mortgage</code>, <code>usecode</code>, <code>yearbuilt</code>, <code>totrooms</code>, <code>lotsize</code>, <code>cash_sale</code>, <code>buyer_bus_ind</code>, <code>buyer_trst_ind</code>, <code>investor_type_purchase_building</code>, and <code>current_owner</code>.</p>
+		
+        <p>There was a lot to unpack here so I started out by seeing over the years the number of sales, how much they were by median, and how many. This dataset had a range of sales from 2000 - 2022. </p>
+                <figure aria-label="Residential sales and prices by year bar and line chart" role="img">
+			<img src="A2-assets/residential_sales_and_prices_by_year_bar_and_line_chart.png" alt="Residential sales and prices by year bar and line chart">
+		</figure>
+
+    
+        I then explored where sales were most were concentrated over the past 22 years. The standout number of sales are near Back Bay, South End, and Roxbury. I wanted to try using the <code>geojson</code> and <code>lat</code> and <code>long</code> values but I fear I didn't know how to make it super accurate as the map ended up not quite right and I couldn't fix it. To supplement this information, I provided humble bar charts.  
+                <figure aria-label="Number of sales and sale price by neighborhood" role="img">
+			<img src="A2-assets/number_of_sales_and_sale_price_by_neighborhood.png" alt="Number of sales and sale price by neighborhood">
+		</figure> 
+        
+        <figure aria-label="Number of sales by neighborhood map" role="img">
+			<img src="A2-assets/number_sales_by_neighborhood_map.png" alt="Number of sales by neighborhood map">
+		</figure>
+
+
+        Similarly, I explored the median sale price by neighborhood. The standout high median sale price is in South Boston Waterfront, South Boston, and Back Bay. 
+        <figure aria-label="Median sale price by neighborhood map" role="img">
+			<img src="A2-assets/median_sale_price_by_neighborhood_map.png" alt="Median sale price by neighborhood map">
+		</figure>
+
+
+
+          <p>Since I am exploring sales, who is buying these properties?  There are several types of buyers including <code>non-investor</code>, <code>small</code>, <code>medium</code>, <code>institutional</code>, and <code>large</code>. I created a pictogram to see the proportionality of buyer type, and suprisngly the largest type is non-investor!</p>
+        		<figure aria-label="Investor type pictogram" role="img">
+			<img src="A2-assets/investor_type_pictogram.png" alt="Investor type pictogram">
+		</figure>
+
+        On <a href="https://datavizcatalogue.com/index.html">The Data Visualisation Catalog</a>, box and whisker plots are recommended for comparing distributions of a continuous variable across categories. I wanted to see the distribution of sale price by investor type. However, it wasn't entirely clear to me what the data was supposed to mean, even after reading the chart description. However, a span plot was also reccomended and I think it makes more sense so I placed it below.</p>
+        <figure aria-label="Sale price by investor type box and whisker" role="img">
+			<img src="A2-assets/sale_price_by_investor_type_box_whisker.png" alt="Sale price by investor type box and whisker">
+            <img src="A2-assets/sale_price_by_investor_type_span.png" alt="Sale price by investor type span plot">
+		</figure>
+
+       
+        <p>I wanted to use a word cloud to identify all the types of usage and style values to find the most and least common descriptors. The most common type of usage was <code>condo</code> and the common styles were <code>row-middle</code> and <code>high-rise</code>.</p>
+
+		<figure aria-label="Usage and style word clouds" role="img">
+			<img src="A2-assets/usage_and_style_word_clouds.png" alt="Usage and style word clouds">
+		</figure>
+
+		<h2>Phase 2: Investigation</h2>
+		<p>For each question, I created and refined visualizations (adding variables, adjusting sorting/scales, filtering/subsetting) and documented cleaning steps when applied.</p>
+
+		<h3>Q1: What is the relationship between corporate ownership and owner occupancy?</h3>
+		<p>From Phase 1, corporate ownership increased while owner occupancy decreased (2004–2024). To examine intersections I created multi-panel neighborhood line plots comparing corporate ownership rate and owner-occupancy rate over time.</p>
+		<figure aria-label="Owner occupancy vs corporate ownership — multi-line by neighborhood" role="img">
+			<img src="A2-assets/owner_occupancy_vs_corporate_ownership_by_neighborhood_multi_line_plot.png" alt="Owner occupancy vs corporate ownership — multi-line by neighborhood">
+		</figure>
+
+		<p>I also made a bubble plot of the two rates sized by total units. As of 2024, high corporate ownership and low owner occupancy were notable in Fenway, South Boston Waterfront, Downtown, and Longwood; low corporate ownership and high owner occupancy were found in Roslindale, Hyde Park, and West Roxbury.</p>
+		<figure aria-label="Corporate ownership vs owner-occupied — bubble chart" role="img">
+			<img src="A2-assets/corporate_ownership_vs_owner_occupied_bubble_chart.png" alt="Corporate ownership vs owner-occupied — bubble chart">
+		</figure>
+
+		<p>I produced a heatmap of corporate ownership rate by neighborhood and year; most neighborhoods show a marked increase in the last ~4 years, with exceptions such as Hyde Park, Jamaica Plain, Roslindale, and West Roxbury.</p>
+		<figure aria-label="Corporate ownership rate by neighborhood and year — heatmap" role="img">
+			<img src="A2-assets/corp_own_rate_by_neighborhood_and_year_heatmap.png" alt="Corporate ownership rate by neighborhood and year — heatmap">
+		</figure>
+
+		<p>I checked which neighborhoods increased owner-occupancy rate; Roxbury, Chinatown, and South Boston Waterfront showed increases.</p>
+		<figure aria-label="Change in owner-occupancy rate — bar chart" role="img">
+			<img src="A2-assets/Change_owner_occupancy_rate_bar_chart.png" alt="Change in owner-occupancy rate — bar chart">
+		</figure>
+
+		<h3>Q2: What is the makeup of non-dominant populations and where do they live in Boston?</h3>
+		<p>People of color combined form a majority in Boston, so I explored their neighborhood distributions using sankey diagrams and dot-matrix panels.</p>
+		<figure aria-label="Race flows — Boston sankey" role="img">
+			<img src="A2-assets/racial_composition_sankey_chart.png" alt="Race flows Boston — sankey">
+		</figure>
+		<figure aria-label="Race flows — by neighborhood sankey" role="img">
+			<img src="A2-assets/racial_composition_by_neighborhood_sankey_chart.png" alt="Race flows by neighborhood — sankey">
+		</figure>
+
+		<p>I also created dot-matrix panels showing dominant-race proportions and versions excluding the White category to highlight distribution of non-dominant populations.</p>
+		<figure aria-label="Race dot matrix" role="img">
+			<img src="A2-assets/neighborhood_population_by_race_dot_matrix.png" alt="Race dot matrix">
+		</figure>
+		<figure aria-label="Residences dot matrix" role="img">
+			<img src="A2-assets/residences_dot_matrix.png" alt="Residences dot matrix">
+		</figure>
+		<figure aria-label="Race dot matrix excluding White" role="img">
+			<img src="A2-assets/neighborhood_population_by_race_excl_white_dot_matrix.png" alt="Race dot matrix without White">
+		</figure>
+		<figure aria-label="Residences dot matrix excluding households" role="img">
+			<img src="A2-assets/residences_without_households_dot_matrix.png" alt="Residences dot matrix excluding households">
+		</figure>
+
+        <figure aria-label="Boston population by quarters — stacked bars" role="img">
+			<img src="A2-assets/boston_population_by_quarters_stacked_bars.png" alt="Boston population by quarters — stacked bars">
+		</figure>
+		<figure aria-label="Boston population by quarters excluding college — stacked bars" role="img">
+			<img src="A2-assets/boston_population_by_quarters_excl_college_stacked_bars.png.png" alt="Boston population by quarters excluding college — stacked bars">
+		</figure>
+
+        		</figure>
+        		<figure aria-label="Racial composition of Boston" role="img">
+			<img src="A2-assets/racial_composition_of_boston.png" alt="Racial composition of Boston">
+		</figure>
+
+		<h3>Are residences recently sold in areas with dominant populations lined up in time with corporate ownership increase?</h3>
+
+	</main>
+
+	<!-- Image modal/lightbox -->
+	<div id="image-modal" aria-hidden="true">
+	  <button class="close-btn" aria-label="Close enlarged image">✕</button>
+	  <img src="" alt="">
+	</div>
+
+	<script>
+// Click-to-enlarge lightbox for images inside the main content
+(function(){
+	const modal = document.getElementById('image-modal');
+	const modalImg = modal.querySelector('img');
+	const closeBtn = modal.querySelector('.close-btn');
+
+	function openModal(src, alt, ariaLabel){
+		modalImg.src = src;
+		modalImg.alt = alt || '';
+		modal.setAttribute('aria-hidden', 'false');
+		modal.classList.add('open');
+		// focus the close button for accessibility
+		closeBtn.focus();
+	}
+
+	function closeModal(){
+		modal.classList.remove('open');
+		modal.setAttribute('aria-hidden', 'true');
+		modalImg.src = '';
+	}
+
+	// Attach click handlers to images within the .middle container
+	const images = document.querySelectorAll('main.middle img');
+	images.forEach(img => {
+		img.style.cursor = 'zoom-in';
+		img.addEventListener('click', (e)=>{
+			openModal(img.src, img.alt, img.getAttribute('aria-label'));
+		});
+	});
+
+	// close interactions
+	closeBtn.addEventListener('click', closeModal);
+	modal.addEventListener('click', (e)=>{
+		if(e.target === modal) closeModal();
+	});
+	document.addEventListener('keydown', (e)=>{
+		if(e.key === 'Escape') closeModal();
+	});
+})();
+		</script>
+</body>
+</html>

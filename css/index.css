@@ -1,12 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Lora');
-
+/* Fonts are loaded via link in the HTML for better reliability */
 body {
-  font-family: 'Lora';
+  font-family: 'Lora', serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
   text-transform: lowercase;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* Reset default page spacing so centering works predictably */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .grid {
@@ -21,16 +29,57 @@ body {
 }
 
 .middle {
-  max-width: 525px;
+  max-width: 700px;
   padding-left: 20px;
   padding-right: 20px;
+  margin: 2rem auto;
+  box-sizing: border-box;
 }
 
 h1 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   text-transform: lowercase;
+  margin-top: 0.2em;
+}
+
+/* Apply DM Sans to section headings as well for consistent look */
+h2, h3 {
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 0.35em;
 }
 
 a {
   color: black;
+}
+
+/* Images and figures scale to the container */
+main.middle figure {
+  margin: 1.2em 0;
+}
+main.middle img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5em auto;
+}
+
+/* Ensure figures don't overflow the `.middle` container */
+main.middle figure {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* If large images exist, preserve their aspect ratio and contain them */
+main.middle img.large {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #444;
+  text-align: center;
+  margin-top: 0.4em;
 }
