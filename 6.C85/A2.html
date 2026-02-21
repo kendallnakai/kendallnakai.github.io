@@ -138,11 +138,14 @@ figcaption {
 			<li><strong>Q3</strong>: What is the median amount owed in Boston? What is that proportion to the average income? How about the average income of people of color? </li>
 		</ul>
 
-		<p>However, as I explored the data available, I realized I would have to pivot. These ended up being my questions:</p>
+		<p>However, as I explored the data available, I realized I would have to pivot to something the data could answer. These ended up being my questions:</p>
 		<ul>
-			<li><strong>Q1</strong>: What is the relationship between corporate ownership and owner occupancy? <em>Motivation / Source</em></li>
-			<li><strong>Q2</strong>: What is the makeup of non-dominant populations and where do they live in Boston? <em>Motivation and source: Based on the HomesForAll background reading, the highest concentration of evictions are also in neighborhoods with the highest concentration of renters of color.</em></li>
-			<li><strong>Q3</strong>: Are residences recently sold in areas with dominant populations lined up in time with corporate ownership increase? <em>Motivation and source: Based on the NYT background reading, in Richmond, 64% of all 113,000 renters behind on rent are people of color and the median amount owed is $686.</em></li>
+			<li><strong>Q1: What is the relationship between corporate ownership and owner occupancy? </strong>
+				<p>Based on the HomesForAll reading, coporate absentee landlords file for eviction more commonly. Corporate ownership implies a single entity owns many homes, likely not living in them whereas owner occupancy would show the rate at which the owner lives in the home. I am interested to see the relationship between these two, in what neighborhoods, and over time. I think if there is higher corporate ownership, there is less incentive to stay in homes that one owns if neighbors are not also owners so there is less owner occupancy. While the data doesn't give us eviction rate, I think the implications of owners not living in their homes could be an indictor of higher evicition rates.</em></p></li>
+			<li><strong>Q2: What is the makeup of non-majority populations and where do they live in Boston? </strong>
+				<p>Based on the HomesForAll background reading, the highest concentration of evictions are also in neighborhoods with the highest concentration of renters of color. But non-majority can also mean non-traditional households like group quarters. I would like to know where the largest and smallest concetrations of non-majority populations live as that may indicate areas of higher or lower eviction rates.</p></li>
+			<li><strong>Q3: Are residences recently sold in areas with majority populations lined up in time with corporate ownership increase? </strong>
+				<p>Based on the NYT background reading, in Richmond, 64% of all 113,000 renters behind on rent are people of color and the median amount owed is $686. I'm curious if there's a correlation between if corporate owners want to buy in areas with the largest concetration of a majority population, such as race, wealth, etc i.e. where renters would be wealthy (and potentially White) so there would be less likelihood to owe and evict However, since income data is not supplied in census, this would be off race and potentially wealth could be inferred with it based on home sale price</p></li>
 		</ul>
 
 		<h2>Phase 1: Data overview and exploration</h2>
@@ -176,25 +179,25 @@ figcaption {
 			<img src="A2-assets/population_by_race_pie_chart.png" alt="Population by race — pie chart">
 		</figure>
 
-		<p>The census considers places of living to be <a href="https://www.census.gov/topics/income-poverty/poverty/guidance/group-quarters.html" target="_blank" rel="noopener">housing units or group quarters</a>. The keys in the csv distinguish group quarters as <code>nursing</code>, <code>college</code>, <code>correctional</code>, <code>juvinile</code>, <code>military</code>, <code>other_inst</code>, <code>other_noninst</code>. Housing units make up ~93.3% of the population and the largest population of the group quarters is <code>college</code> which accounts for ~5.1%.</p>
+		<p>The census considers places of living to be <a href="https://www.census.gov/topics/income-poverty/poverty/guidance/group-quarters.html" target="_blank" rel="noopener">housing units or group quarters</a>. The keys in the csv distinguish group quarters as <code>nursing</code>, <code>college</code>, <code>correctional</code>, <code>juvinile</code>, <code>military</code>, <code>other_inst</code>, <code>other_noninst</code>. Housing units make up ~93.3% of the population and the largest population of the group quarters is <code>college</code> which accounts for ~5.1%. The largest population of group quarters units is in the Fenway neighborhood at 16,720 or 44.3% of Fenway</p>
 		<figure aria-label="Population by housing — stacked bars" role="img">
 			<img src="A2-assets/boston_population_by_housing_stacked_bars.png" alt="Population by housing — stacked bars">
 		</figure>
-        <p>However, from this stacked bar chart, for each neighborhood, we can see households strongly dominate the housing composition so much so that the other categories aren't visible. This sankey chart paints a better picture for Boston overall so the numbers are at least visible, despite the lines for <code>juvenile</code>, <code>correctional</code>, <code>other_inst</code>, and <code>military</code> being equally thin.</p>
+        <p>However, from this stacked bar chart, for each neighborhood, we can see households strongly dominate the housing composition, so much so that the other categories aren't visible. This sankey chart paints a better picture for Boston overall so the numbers are at least visible, despite the lines for <code>juvenile</code>, <code>correctional</code>, <code>other_inst</code>, and <code>military</code> being equally thin. We see here that military housing is the least prevalent (146, less than 0.1%) It is unclear why the data here doesn't differentiate types of households but does differentiate types of group quarters, further diving away from institutional and non-institutional into subgroups like nursing, but if I were to fold those numbers back into their respective subgroups, non-institutional would be 38,010 or 6% of total, insitituional would be 4,811 at 0.75% and combined, all group quarters non-households would be 42,821 or 6.75%.</p>
         <figure aria-label="Population by type of housing" role="img">
-			<img src="A2-assets/population_by_type_of_housing.png" alt="Population by type of housing">
+			<img src="A2-assets/population_by_type_of_housing_sankey.png" alt="Population by type of housing">
 		</figure>
 
 		<h3>1.3 Residential building and sales</h3>
 		<p>Finally, I explored <code>A2_EDA_Residential.csv</code> which dataset included the most fields such as <code>mortgage</code>, <code>usecode</code>, <code>yearbuilt</code>, <code>totrooms</code>, <code>lotsize</code>, <code>cash_sale</code>, <code>buyer_bus_ind</code>, <code>buyer_trst_ind</code>, <code>investor_type_purchase_building</code>, and <code>current_owner</code>.</p>
 		
-        <p>There was a lot to unpack here so I started out by seeing over the years the number of sales, how much they were by median, and how many. This dataset had a range of sales from 2000 - 2022. </p>
+        <p>There was a lot to unpack here so I started out by seeing over the years the number of sales, how much they were by median, and how many. This dataset had a range of sales from 2000 - 2022. I can see for the most part, price of homes has steadily increased over time, with the median sale price, going from $340,000 in 2000 to $1,085,000 in 2022, a bit more than tripled (3.1%) over 23 years. However, the actual number of sales hasn't increased, with the peak being in 2004 and some small dips matching national events in 2009 and 2020. While sales don't remain "consistent" across the years per say, the rate is somewhat steady, with the average number of sales per year being 2,144 and the yearly counts ranging from 1,516 (2020) to 3,205 (2004).</p>
                 <figure aria-label="Residential sales and prices by year bar and line chart" role="img">
-			<img src="A2-assets/residential_sales_and_prices_by_year_bar_and_line_chart.png" alt="Residential sales and prices by year bar and line chart">
+			<img src="A2-assets/residential_sales_and_prices_by_year_line_chart.png" alt="Residential sales and prices by year bar and line chart">
 		</figure>
 
     
-        I then explored where sales were most were concentrated over the past 22 years. The standout number of sales are near Back Bay, South End, and Roxbury. I wanted to try using the <code>geojson</code> and <code>lat</code> and <code>long</code> values but I fear I didn't know how to make it super accurate as the map ended up not quite right and I couldn't fix it. To supplement this information, I provided humble bar charts.  
+        I then explored where sales were most were concentrated over the past 23 years. The standout number of sales are near Back Bay, South End, and Roxbury. This may imply these areas are popular to live in. I note there are so few sales per neighborhood from the data it's not visible on the chart. I wanted to try using the <code>geojson</code> and <code>lat</code> and <code>long</code> values but I fear I didn't know how to make it super accurate as the map ended up not quite right and I couldn't fix it. To supplement this information, I provided humble bar charts.  
                 <figure aria-label="Number of sales and sale price by neighborhood" role="img">
 			<img src="A2-assets/number_of_sales_and_sale_price_by_neighborhood.png" alt="Number of sales and sale price by neighborhood">
 		</figure> 
@@ -204,14 +207,14 @@ figcaption {
 		</figure>
 
 
-        Similarly, I explored the median sale price by neighborhood. The standout high median sale price is in South Boston Waterfront, South Boston, and Back Bay. 
+        Similarly, I explored the median sale price by neighborhood. The standout high median sale price is in South Boston Waterfront, South Boston, and Back Bay. This may imply these areas are expensive to buy.
         <figure aria-label="Median sale price by neighborhood map" role="img">
 			<img src="A2-assets/median_sale_price_by_neighborhood_map.png" alt="Median sale price by neighborhood map">
 		</figure>
 
 
 
-          <p>Since I am exploring sales, who is buying these properties?  There are several types of buyers including <code>non-investor</code>, <code>small</code>, <code>medium</code>, <code>institutional</code>, and <code>large</code>. I created a pictogram to see the proportionality of buyer type, and suprisngly the largest type is non-investor!</p>
+          <p>Since I am exploring sales, who is buying these properties?  There are several types of buyers including <code>non-investor (73.4%)</code>, <code>small (13.55%)</code>, <code>medium (6.70%)</code>, <code>large (3.95%)</code>, and <code>institutional (2.41%)</code>. I created a pictogram to see the proportionality of buyer type, and suprisngly the largest type is non-investor!</p>
         		<figure aria-label="Investor type pictogram" role="img">
 			<img src="A2-assets/investor_type_pictogram.png" alt="Investor type pictogram">
 		</figure>
@@ -219,11 +222,12 @@ figcaption {
         On <a href="https://datavizcatalogue.com/index.html">The Data Visualisation Catalog</a>, box and whisker plots are recommended for comparing distributions of a continuous variable across categories. I wanted to see the distribution of sale price by investor type. However, it wasn't entirely clear to me what the data was supposed to mean, even after reading the chart description. However, a span plot was also reccomended and I think it makes more sense so I placed it below. Both explore the IQR or Interquartile Range which is the middle 50% of price distribution for each investor type. This is to get a better idea of a normal distribution of sale prices.</p>
         <figure aria-label="Sale price by investor type box and whisker" role="img">
 			<img src="A2-assets/sale_price_by_investor_type_box_whisker.png" alt="Sale price by investor type box and whisker">
+			<p>Here we can see the highest median price is with large investors at $1,625,000 and the smallest median price is non-investors at $582,500. The span of large and institutional investors is very large for what they are able to purchase, with the upper within IQR being $6,900,000 while the span of non-investors is much lower, with the upper at $925,000 within IQR. Going above IQR, the highest possible for any type of investor is $930,000,000 at instutitional level, which is likely a portfolio sale. These plots, however do not account for time, simply price. </p>
             <img src="A2-assets/sale_price_by_investor_type_span.png" alt="Sale price by investor type span plot">
 		</figure>
 
        
-        <p>I wanted to use a word cloud to identify all the types of usage and style values to find the most and least common descriptors. The most common type of usage was <code>condo</code> and the common styles were <code>row-middle</code> and <code>high-rise</code>.</p>
+        <p>I wanted to use a word cloud to identify all the types of usage and style values to find the most and least common descriptors. The most common type of usage was <code>condo</code> at 90% of homes and the common styles were <code>row-middle</code> (36%), <code>mid-rise</code> (25%), and <code>high-rise</code> (15.5%).</p>
 
 		<figure aria-label="Usage and style word clouds" role="img">
 			<img src="A2-assets/usage_and_style_word_clouds.png" alt="Usage and style word clouds">
@@ -255,14 +259,16 @@ figcaption {
 			<img src="A2-assets/corp_own_rate_by_neighborhood_and_year_heatmap.png" alt="Corporate ownership rate by neighborhood and year — heatmap">
 		</figure>
 
-<p>Then, I wondered since there are some exceptions, <em>is there any neighborhoods have had an increase in owner occupancy rate?</em> While matching the intersecting lines feels good and trends show nuance, I find the black and white, <em>yes and no</em>-ness of bar charts to be quite decisive so wanted to display this answer more clearly through these bar charts. I found Roxbury, Chinatown, and South Boston Waterfront were the only neighborhoods with an increase in owner occupancy rate. This surprised me, as I thought it would match with the neighborhoods that didn’t have a sharply increasing corporate ownership rate. However, upon more thought it made some sense that owner occupancy probably wouldn’t <em>increase</em> but rather just decrease <em>less</em>. Nonetheless, these results surprised me.  
+<p>Then, I wondered since there are some exceptions, <em>is there any neighborhoods have had an increase in owner occupancy rate?</em> While matching the intersecting lines feels good and trends show nuance, I find the black and white, <em>yes and no</em>-ness of bar charts to be quite decisive so wanted to display this answer more clearly through these bar charts. I found Roxbury, Chinatown, and South Boston Waterfront were the only neighborhoods (made obvious by being on the right) with an increase in owner occupancy rate. This surprised me, as I thought it would match with the neighborhoods that didn’t have a sharply increasing corporate ownership rate. However, upon more thought it made some sense that owner occupancy probably wouldn’t <em>increase</em> but rather just decrease <em>less</em>. Nonetheless, these results surprised me.  
 </p>		<figure aria-label="Change in owner-occupancy rate — bar chart" role="img">
 			<img src="A2-assets/Change_owner_occupancy_rate_bar_chart.png" alt="Change in owner-occupancy rate — bar chart">
 		</figure>
 
-		<h3>Q2: What is the makeup of non-dominant populations and where do they live in Boston?</h3>
-		<p>From exploration, White makes up the majority of the population but less than that of the combination of all other races, so I was curious what the racial distribution was across neighborhoods in Boston. I started out by exploring Boston as a whole through a Sankey diagram, then each of the neighborhoods. 
+		<h3>Q2: What is the makeup of non-majority populations and where do they live in Boston?</h3>
+		<p>From exploration, the <code>White</code> race cateogry makes up the majority of the population (280,458 43.9%) but less than that of the combination of all other races (357,915 46.1%), so I was curious what the racial distribution was across neighborhoods in Boston. I started out by exploring Boston as a whole through a Sankey diagram, then each of the neighborhoods. 
 </p>
+						<p>Dorchester (122,191) is the largest and most diverse neighborhood with <code>Black</code> 35% (42,714), <code>White</code> 22% (27,411), <code>Hispanic</code> 21% (25,285), <code>AAPI</code> 11% (13,360).</p>
+
 		<figure aria-label="Race flows — Boston sankey" role="img">
 			<img src="A2-assets/racial_composition_sankey_chart.png" alt="Race flows Boston — sankey">
 		</figure>
@@ -270,36 +276,61 @@ figcaption {
 			<img src="A2-assets/racial_composition_by_neighborhood_sankey_chart.png" alt="Race flows by neighborhood — sankey">
 		</figure>
 
-		<p>I also created dot-matrix panels, one with </ode>White</code> category, the dominant-race category included and one version excluding the <code>White</code> to highlight distribution of non-dominant populations. The dot matrixes without <code>White</code> showcase both the striking diversity of some neighborhoods as well as majority races in different neighborhoods. For instnace, Chinatown has exceedingly <code>AAPI</code>, East Boston has majority <code>Hispanic</code>, and Mattapan has majority <code>Black</code>.</p>
+		<p>While these sankey diagrams are exploratory, I wanted something more explanatory in being able to showcase racial diversity in neighborhoods or lack therof. I made a panel fo population by race and in some nieghborhoods looking empty other than <code>White</code>, or some being very colorful, it shows overall neighborhood makeup.</p>
+		<figure aria-label="Population by race by neighborhood bar panels" role="img">
+			<img src="A2-assets/population_by_race_by_neighborhood_bar_panels.png" alt="Population by race by neighborhood bar panels">
+		</figure>
+
+		<p>However, I didn't feel like I was able to deteremine where the makeup of race and neighborhoods may <em>specifically</em> be resided in so I also created dot-matrix panels. In the first dot matrix panel, the majority </ode>White</code> race category was included but I wondered <em>what would neighborhood makeup look like if I excluded <code>White</code> to eliminate some noise?</em></p>
 		<figure aria-label="Race dot matrix" role="img">
 			<img src="A2-assets/neighborhood_population_by_race_dot_matrix.png" alt="Race dot matrix">
 		</figure>
+
+					<p>I made a version excluding the <code>White</code> to highlight distribution of non-majority populations. The dot matrixes without <code>White</code> showcase both the striking diversity of some neighborhoods as well as majority races in different neighborhoods. </p>
+						<p>For instance, Chinatown has exceedingly <code>AAPI</code> (59.9% inc <code>White</code>, 81.6% without), East Boston has majority <code>Hispanic</code> (50.4% inc <code>White</code>, 79.5% without), and Mattapan has majority <code>Black</code> (68.3% inc <code>White</code>, 72.8% without). </p>
+						<p>If it's difficult to determine majority in the other dot matricies, that's somewhat intentional in that by exluding the majority, I am able to highlight where there's range where it might not otherwise be recognized. For instnace, West Roxbury has a non-White population of 10,643 with <code>Hispanic</code> 34% (3,567), <code>Black</code> 31% (3,312), <code>AAPI</code> 23% (2,451), <code>Two+</code> 10% (1,067). Beacon Hill has a Non-White population of 1,815 with <code>AAPI</code> 35% (630), <code>Hispanic</code> 30% (537), <code>Two or more</code> 19% (349), <code>Black</code> 14% (252). North End has a Non-White population of 1,499 with <code>Hispanic</code> 35% (528), <code>AAPI</code> 30% (445), <code>Two+</code> 22% (333).</p>
+							<p>While the percentages for each race category are included in the zoomed dot matrix, the small text ended up being a feature as it helped me see the shape and majority colors of the data rather than specifics. </p>
 
 		<figure aria-label="Race dot matrix excluding White" role="img">
 			<img src="A2-assets/neighborhood_population_by_race_excl_white_dot_matrix.png" alt="Race dot matrix without White">
 		</figure>
 
-				<figure aria-label="Residences dot matrix" role="img">
-			<img src="A2-assets/residences_dot_matrix.png" alt="Residences dot matrix">
-		</figure>
 
-		<figure aria-label="Residences dot matrix excluding households" role="img">
-			<img src="A2-assets/residences_without_households_dot_matrix.png" alt="Residences dot matrix excluding households">
-		</figure>
+				<p>I move onto types of residences which are not households, the non-majority group quarters. From the exploratory phase for types of residences, the stacked bar chart made it quite difficult to see other categories outside of households. In the following bar charts, I explore what they look like without households being a cateogry, just group quarters.</p>
+				<p></p>Looking at a whole, college is the largest makeup at 76% of all group quarters. Looking by neighborhood, college has the amount of residences in Fenway by far, followed by Brighton, Downtown, Allston, Longwood, and Roxbury. However, I also notice the entire lack of non-household residences in South Boston Waterfront and very little in Charlestown, East Boston, and West End.</p>
 
 
-				<p>From the exploratory phase for types of residences, the stacked bar chart made it quite difficult to see other cateogires outside of households. In the following bar charts, I explore what they look like without households being a cateogry, just group quarters. College is the largest makeup, with the most amount of college residences in Fenway by far, followed by Brighton, Downtown, Allston, Longwood, and Roxbury. However, I also notice the entire lack of non-household residences in South Boston Waterfront.</p>
 
         <figure aria-label="Boston population by quarters — stacked bars" role="img">
 			<img src="A2-assets/boston_population_by_quarters_stacked_bars.png" alt="Boston population by quarters — stacked bars">
 		</figure>
-				<p>College is largely dominant in the stacked bar, so I was hoping to see type of housing more evenly distributed. I remove college and rebalance and more major and minor types of group quarter housing emerges by neighborhood. Roxbury carries the highest amount of group quarter category, with Juvenile facilities being the most common type of group quarter housing in that neighborhood with <code>juvenile</code> and <code>correctional</code> facilities being the largest. I also see Longwood, Beacon Hill, and West End have very little to no group quarters.</p>
+
+						<figure aria-label="Boston housing by group quarters pictogram" role="img">
+					<img src="A2-assets/housing_by_group_quarters_pictogram.png" alt="Boston housing by group quarters pictogram">
+				</figure>
+				<p>College is largely majority in the stacked bar, so I was hoping to see type of housing more evenly distributed. Similarly to removing the majority category <code>White</code> and <code>Household</code>, to further understand the nuanced data, I remove <code>college</code> and rebalance and more major and minor types of group quarter housing emerges by neighborhood. </p>
+				<p>From this chart, we can see Roxbury carries the highest amount of group quarter category, with Juvenile facilities being the most common type of group quarter housing in that neighborhood with <code>juvenile</code> and <code>correctional</code> facilities being the largest. I also see Longwood, Beacon Hill, and West End have very little to no group quarters.</p>
+				<p>The next largest category is <code>nursing</code> (29%) with the most <code>nursing</code> housing in West Roxbury and Roslindale but fairly evenly distributed, potentially implying nursing housing is almost everywhere, with Roxbury being an outlier in it having themost group quarter homes.</p>
 
 		<figure aria-label="Boston population by quarters excluding college — stacked bars" role="img">
 			<img src="A2-assets/boston_population_by_quarters_excl_college_stacked_bars.png.png" alt="Boston population by quarters excluding college — stacked bars">
 		</figure>
+		
+<figure aria-label="Boston housing by group quarters excluding college pictogram" role="img">
+					<img src="A2-assets/housing_by_group_quarters_excl_college_pictogram.png" alt="Boston housing by group quarters excluding college pictogram">
+				</figure>
 
-		<h3>Are residences recently sold in areas with dominant populations lined up in time with corporate ownership increase?</h3>
+				
+
+		<h3>Q3: Are residences recently sold in areas with majority populations lined up in time with corporate ownership increase?</h3>
+<p>To answer this, first I do a little cross-examining the intersection of price, number of sales, and neighborhood. In the exploration, I found that the standout high median sale prices are in South Boston Waterfront, South Boston, and Back Bay which may imply these areas are expensive to buy and the standout number of sales are in Back Bay, South End, and Longwood which may imply  areas are popular to live in. When I take a look at the intersection, I see Back Bay has a high number of sales and median price. However, in the neighborhoods for census, Back Bay wasn't listed so I had to map the zip code to the neighborhood to draw this analysis.</p>
+
+<figure aria-label="Median price vs number of sales by neighborhood bubble chart" role="img">
+			<img src="A2-assets/median_price_vs_num_sales_by_neighborhood_bubble_chart.png" alt="Median price vs number of sales by neighborhood bubble chart">
+		</figure>
+
+
+		neighborhood_pct_white_sales.png
 
 		<h2>Summary</h2>
 		<p><b>Data lessons</b>: I learned so much in this assignment. For one, it feels like I now know  <a href="https://datavizcatalogue.com/index.html">The Data Visualisation Catalog</a> by heart. I spent a lot of time exploring what different visualizations were even possible and how I could incoporate them in different ways to the assignment that was creative but still clear and concise. I found going manually through the data first and exploring the different keys and potential values was valuable in understanding what is there and what will appear when aggregating it.</p>
