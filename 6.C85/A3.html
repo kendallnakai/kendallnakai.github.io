@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>A3: Visualization Critique and Redesign</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+/* Embedded from css/index.css */
+/* Fonts are loaded via link in the HTML for better reliability */
+body {
+	font-family: 'Lora', serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	justify-content: center;
+	color: #111;
+	line-height: 1.5;
+}
+
+/* Reset default page spacing so centering works predictably */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.grid {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.square {
+	width: 200px;
+	height: 200px;
+}
+
+.middle {
+	max-width: 700px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 2rem auto;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'DM Sans', sans-serif;
+	margin-top: 0.2em;
+}
+
+/* Apply DM Sans to section headings as well for consistent look */
+h2, h3 {
+	font-family: 'DM Sans', sans-serif;
+	margin-bottom: 0.35em;
+}
+
+a {
+	color: black;
+}
+
+/* Images and figures scale to the container */
+main.middle figure {
+	margin: 1.2em 0;
+}
+main.middle img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0.5em auto;
+}
+
+/* Ensure figures don't overflow the `.middle` container */
+main.middle figure {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* If large images exist, preserve their aspect ratio and contain them */
+main.middle img.large {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+figcaption {
+	font-size: 0.9rem;
+	color: #444;
+	text-align: center;
+	margin-top: 0.4em;
+}
+/* Modal for image lightbox */
+#image-modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.75);
+	z-index: 9999;
+	padding: 2rem;
+}
+#image-modal.open {
+	display: flex;
+}
+#image-modal img {
+	max-width: 100%;
+	max-height: 100%;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+	border-radius: 4px;
+}
+#image-modal .close-btn {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: rgba(255,255,255,0.9);
+	border: none;
+	padding: 0.4rem 0.6rem;
+	font-size: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+		</style>
+</head>
+<body>
+	<main class="middle">
+		<h1>A3: Visualization Critique and Redesign</h1>
+		<h3>Kendall Nakai - knakai@mit.edu</h3>
+
+		<h2>Insights about the data/visualization</h2>
+		<p>I have to admit, the questions I started out with weren’t possible to answer because the data available wouldn’t help answer them. I started out with the following questions:</p>
+			<ul>
+				<li>On my screen, 150k cases is about the width of my index finger, so anything thinner is less and thicker is more</li>
+				<li>There are 12 slices of the figure, each representing a month so the sprial’s location tells me which month I’m in, also denoted by Jan at 12:00, April at 3:00, July at 6:00, and Oct at 9:00</li>
+				<li>The beginning of the year is where 12:00 would be on a clock, which is where each of the years start</li>
+				<li>According to the “helper text”, anywhere given on the line is the “7-day average”</li>
+				<li>On the scale of the entire visualization, there are slight peaks and troughs until about November 2020, where cases begin to peak heavily until about mid-February 2021, where it recedes but is still larger than 2020 until mid-May 2021, which to my knowledge was when most of the immunocompromised people had been able to get their first vaccines by. The trend then goes to appearedly less cases than 2020 before piking again at the beginning of August 2021, rising, then falling a small amount by October 2021, then remaining steady until mid-December 2021 where it then begins peaking into exponential territory and that’s where the  data ends</li>
+				<li>The article confirms trends seen in the chart seems to be routine or “the norm” but that this “wave” is different than the other “spikes”. However, it also specifies that while the Omicron variant is more contagious, it’s less severe. The next data visualization shows the projections as a surge and discussing how hospitalizations and deaths are uncertain due to to more variants emerging “For example, if twice as many people become infected but these people are half as likely to be hospitalized, the demand for hospital beds would be the same.”</li>
+				<li>The article has implications of daily life impact for workers, but also has hope in vaccinations</li>
+				<li>The article discusses uncertainty about projection, which might be why Dr. Shaman made two separate visualizations</li>
+				<li>There is also discussion on large cities like New York spiking earlier and others following later</li>
+			</ul>
+
+
+		<h2>Design critique</h2>
+		<p>Dr. Shaman’s team’s visualization in the New York Times article on Covid-19 cases and the spiking Omicron variant is eye-catching, unusual, and therefore standout in terms of Covid-19 “classic” visualizations (i.e. flattening the curve) like a line graph/area chart. The most important trends of the underlying data is well-represented and easy to identify for the intended audience, a general news viewer like myself since I can easily compare that the spikes are around the beginning of 2021 in area, but the current one in 2022 is growing even larger, which based on the article is crisply the intended message of “When to expect Omicron to peak” which is Jan 2022. Since the visualization follows the idea of “time”, going 2020 spiraling into 2021, then 2022, a reader is quickly able to pick up on that time goes clockwise, and since there are 12 hours represented on a clock, I can see there are 12 months represented on this visualization. In my opinion, the main highlighted messages of a visualization should be an explanatory experience, and I think this visualization does that. </p>
+<p>However, reading the nuances of the visualization is tricky and I wouldn’t rely on it for any more than the main message of a spiral timeline, as the exploratory experience waxes, then quickly wanes. For instance, the area of 150k cases is shown but since it’s on an area scale, it’s difficult for the reader to correctly interpret what the scale of cases is beyond that since area takes on such a non-linear proportion and its initial presentation as a triangle make it impossible to even correctly guesstimate how many cares there are in a given part of the visualization. If there’s some delineation of proportion on a scale, since there’s the triangular/pie/clock-like structure, there could also be some more obvious conceptualization of number of cases. Additionally, since the years are expanding on an uneven spiral, getting larger and larger, the time expansion is also confusing. The label of “7-day average” doesn’t tell me anything because I don’t know what proportion of time it’s referring to since 2020 is smaller in circumference than 2021 and 2022. In this case, the design could be improved by being more consistent in spiral or if not that utilize all the extra space created. The visualization is representative of a message of Covid-19 peaking but the article’s main purpose is actually discussing the Omicron variant in comparison to the previous variants so it could use the empty space of both unclear number of cases and unclear time to communicate something about variants. While I believe it could be in the design to obfuscate these to make the main point clearer, I think the other graphic in the article on projected cases could be communicated in the same spiral fashion, giving a more detailed graphic of Omicron’s impact.  
+</p>
+
+<h2>Visualization Sketches</h2>
+
+<h3>Design rationale for Sketch 1</h3>
+		<p>Explaination</p>
+        <p>Some inspiration:</p>
+                <figure aria-label="Sketch 1 inspo" role="img">
+			<img src="A3-assets/sketch1-inspo.png" alt="Sketch 1 inspiration">
+		</figure>
+
+
+        <figure aria-label="Sketch 1" role="img">
+			<img src="A3-assets/sketch1.png" alt="Sketch 1">
+		</figure>
+
+
+
+        <h3>Design rationale for Sketch 2</h3>
+   <p>Some inspiration:</p>
+                <figure aria-label="Sketch 2 inspo" role="img">
+			<img src="A3-assets/sketch2-inspo.png" alt="Sketch 2 inspiration">
+		</figure>
+
+        <figure aria-label="Sketch 1" role="img">
+			<img src="A3-assets/sketch2.png" alt="Sketch 1">
+		</figure>
+
+		<p>Explaination</p>
+
+        <h3>Design rationale for Sketch 3</h3>
+    <p>Some inspiration:</p>
+                <figure aria-label="Sketch 3 inspo" role="img">
+			<img src="A3-assets/sketch3-inspo.png" alt="Sketch 3 inspiration">
+		</figure>
+
+        <figure aria-label="Sketch 3" role="img">
+			<img src="A3-assets/sketch3.png" alt="Sketch 3">
+		</figure>
+
+		<p>Explaination</p>
+
+        <h2>Final Visualization Design</h2>
+
+               <figure aria-label="Final Visualization" role="img">
+			<img src="A3-assets/final-visualization.png" alt="Final Visualization">
+		</figure>
+
+        <p>Explaination</p>
+
+        <h2>Final Writeup</h2>
+
+        <p>DESCRIBE YOUR RATIONALE TO JUSTIFY THE DECISIONS FOR YOUR FINAL DESIGN. WHAT ARE YOU TRYING TO CONVEY, AND HOW DOES YOUR DESIGN FACILITATE THIS?</p>
+
+<p>REFLECT ON HOW YOUR FINAL DESIGN DOES OR DOES NOT ADDRESS YOUR ORIGINAL CRITIQUE. WHAT TENSIONS OR TRADEOFFS DID YOU ENCOUNTER? WHAT DID NOT WORK OUT AS ANTICIPATED?</p>
+<p></p>
+	</main>
+
+	<!-- Image modal/lightbox -->
+	<div id="image-modal" aria-hidden="true">
+	  <button class="close-btn" aria-label="Close enlarged image">✕</button>
+	  <img src="" alt="">
+	</div>
+
+	<script>
+// Click-to-enlarge lightbox for images inside the main content
+(function(){
+	const modal = document.getElementById('image-modal');
+	const modalImg = modal.querySelector('img');
+	const closeBtn = modal.querySelector('.close-btn');
+
+	function openModal(src, alt, ariaLabel){
+		modalImg.src = src;
+		modalImg.alt = alt || '';
+		modal.setAttribute('aria-hidden', 'false');
+		modal.classList.add('open');
+		// focus the close button for accessibility
+		closeBtn.focus();
+	}
+
+	function closeModal(){
+		modal.classList.remove('open');
+		modal.setAttribute('aria-hidden', 'true');
+		modalImg.src = '';
+	}
+
+	// Attach click handlers to images within the .middle container
+	const images = document.querySelectorAll('main.middle img');
+	images.forEach(img => {
+		img.style.cursor = 'zoom-in';
+		img.addEventListener('click', (e)=>{
+			openModal(img.src, img.alt, img.getAttribute('aria-label'));
+		});
+	});
+
+	// close interactions
+	closeBtn.addEventListener('click', closeModal);
+	modal.addEventListener('click', (e)=>{
+		if(e.target === modal) closeModal();
+	});
+	document.addEventListener('keydown', (e)=>{
+		if(e.key === 'Escape') closeModal();
+	});
+})();
+		</script>
+</body>
+</html>
