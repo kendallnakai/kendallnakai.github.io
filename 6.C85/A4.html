@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>A4: Persuasive or Deceptive Visualization??</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+/* Embedded from css/index.css */
+/* Fonts are loaded via link in the HTML for better reliability */
+body {
+	font-family: 'Lora', serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	justify-content: center;
+	color: #111;
+	line-height: 1.5;
+}
+
+/* Reset default page spacing so centering works predictably */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.grid {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.square {
+	width: 200px;
+	height: 200px;
+}
+
+.middle {
+	max-width: 700px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 2rem auto;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'DM Sans', sans-serif;
+	margin-top: 0.2em;
+}
+
+/* Apply DM Sans to section headings as well for consistent look */
+h2, h3 {
+	font-family: 'DM Sans', sans-serif;
+	margin-bottom: 0.35em;
+}
+
+a {
+	color: black;
+}
+
+/* Images and figures scale to the container */
+main.middle figure {
+	margin: 1.2em 0;
+}
+main.middle img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0.5em auto;
+}
+
+/* Ensure figures don't overflow the `.middle` container */
+main.middle figure {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* If large images exist, preserve their aspect ratio and contain them */
+main.middle img.large {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+figcaption {
+	font-size: 0.9rem;
+	color: #444;
+	text-align: center;
+	margin-top: 0.4em;
+}
+/* Modal for image lightbox */
+#image-modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.75);
+	z-index: 9999;
+	padding: 2rem;
+}
+#image-modal.open {
+	display: flex;
+}
+#image-modal img {
+	max-width: 100%;
+	max-height: 100%;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+	border-radius: 4px;
+}
+#image-modal .close-btn {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: rgba(255,255,255,0.9);
+	border: none;
+	padding: 0.4rem 0.6rem;
+	font-size: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+		</style>
+</head>
+<body>
+	<main class="middle">
+		<h1>A4: Persuasive or Deceptive Visualization?</h1>
+		<h3>Kendall Nakai - knakai@mit.edu</h3>
+
+		<h2>Proposition</h2>
+		<p>There is not enough access to abortion clinics in most of the United States</p>
+	
+
+		<h2>Visualization 1: FOR the Proposition		</h2>
+		<figure aria-label="Visualization 1" role="img">
+			<img src="A4-assets/visualization1.png" alt="Visualization 1">
+		</figure>
+		
+		<h3>Design decisions</h3>
+		<ul>
+			<li><b>1</b>: In looking at the <code>% of counties without a known clinic, 2020</code> data in ascending to descending, I noticed an alarming majority of counties in a state don’t have a clinic, so wanted to express how widespread that was. 
+ 			<p>I also noticed that states like Missouri, Wisconsin, and Kentucky that began to lack care <i>seemed</i> to inflow to states with more care (more being relative, by a small percentage) like Illinois. </p> <p>From these observations, wanted to express two things:</p> 
+				<ol>
+					<li>Lack of percentage of clinics in the majority of counties in the majority of states</li>
+					<li>AND that even <i>in</i> states that lack clinics, females in states that lack clinics even <i>more</i> travel to other states for care</li>
+				</ol>
+				<p>To do so, I used a chloropleth geographic map as a heat map to show just how many states lacked clinics, then layered a bubble to express which stateslack clinics had to travel out of state</p>
+			<li><b>-2</b>: While I chose <code>% of counties without a known clinic, 2020</code> to be expressed, I think a more accurate representaton would have been <code>% of women 15-44 living in a county without a known clinic (2020)</code> as depicted in Exploration 7 in the Appendix. However, to be deceptive, using this metric from the dataset supports the message more.</li>
+				<li><b>1</b>: I wanted to use primary colors so when layered they create a combined color. I tried to use yellow and blue as to not imply the partisanship of red and blue, but a dark yellow ended up looking quite red in the first place so had to end up using red and blue for contrast visually. However, when it created a purple, it muddied a lot, so I changed the opacity so it was very clear when a color was very dark red, very dark blue, and light red or light blue.</li>
+			<li><b>1</b>: The heat map is very saturated already, so I added percents to express nuance even in the higher numbers. For instance, in a state like Missouri, 99% of counties didn’t have a known clinic, or Ohio at 95% and Kentucky at 99%, and Wisconsin at 96%. However, even in a a state like Illinois, 89% of counties without a known clinic is still very high, but if everything is dark red it all feels the same without percentages shown. </li>
+		<li><b>-1</b>: Regarding the above design decision, the percentages almost look like they correlate with the bubbles that represent states where those seeking an abortion had to travel out of state for care. This muddies the numbers and makes them unclear. However, I decided to keep them in because while confusing, the high numbers still support the argument more than they hurt it, so I included a note in the key.</li>
+		</ul>
+
+	<h2>Visualization 2: AGAINST the Proposition</h2>
+	<figure aria-label="Visualization 2" role="img">
+		<img src="A4-assets/visualization2.png" alt="Visualization 2">
+	</figure>
+
+	<h3>Design decisions</h3>
+	<ul>
+
+	</li>
+	<li><b>-2</b>: While I used the metric <code>[% of counties without a known clinic, 2020]</code>, in thinking about it more, this statistic is inherently deceptive because:
+		<ol>
+			<li>the wording of the title is unclear, without giving a definition of <code>abortion provider</code> as opposed to <code>clinic</code></li>
+			<li>without having also provided population data of females of pregnancy age (according to the data, 15 - 44), there is no ability to compare ratios in states so that perhaps a very small-population state with limited health clinics in the first place wouldn’t also have abortion resources</li>
+		</ol>
+		<p>To counterbalance this, since the data is taken in 2020, that’s also a census year. I used the US census data to find how many counties were in each state. I then found <code>counties without clinic = (state county count) × (% without clinic) / 100</code>. I then estimated number of females 15 - 44 in a state from the <code>abortion rate per 1,000 women 15–44 by residence</code> and <code>abortions by state of residence, 2020</code> through <code>total females = abortions ÷ (rate/1000) = abortions × (1000/rate)</code></p>
+		<p>Finally, to find ratio of each, I calculated <code>(counties without clinic / women 15–44) × 100</code></p>
+	<p>While I originally thought this might <i>even the scales</i> to see the true proportionality of clinic to potential patient population, it <i>actually muddied the numbers even more!</i> I messed around with per 100, 1000, and 10,000 and found at any ratio it would make it seem like there are plenty of clinics, when we don't consider state population proportion to each other. Since the last visualization wasin percentages, I used percentage for this too. </p>
+	</li>
+		<li><b>-1</b>: In comparison to the last visual, which urges that there is widespread <i>lack</i> counties without clinics with the alarming amount of deep red color and the majority of percentages over <code>90%</code>, this visual is meant to express that there are <i>plenty</i> of clinics in proportion of the number of females 15-44 who are in childbearing age in most places except for maybe the middle of the north. Most of the counties per 100 females are sub 0.001%, with the highest being 0.039%, not even a single whole percent. This is able to utilize the deceptiveness of  <code>[% of counties without a known clinic, 2020]</code> even more.</li>
+		<li><b>-0.5</b>: While the data itself uses the word <code>women</code> in the data, I used <code>female</code>. I think this is deceptive in that it’s not he same wording as the dataset and while they imply the same idea that both are pregnancy-age, I thought it was more accurate to use female since the ability to give birth is based on sex, not gender</li>
+	</ul>
+
+<h2>Final reflection</h2>
+<p>I decided to make the proposition “There is not enough access to abortion clinics in most of the United States ” because I felt like with the data given, and the largeness of the United States and vast amount of discrepancy between states, it could be true or false. It was difficult to decide what axis to focus on, how to use the percentage statistics when the original numbers to create the percent weren’t given, and how to account for population size differences without unintentionally distorting the comparison. It was straightforward to compare across all 50 states, make geographic observations once plotted, and identify regional clusters or outliers that stood apart from neighboring states. </p>
+<p>To explore (see Appendix), I observed abortions by state, population share by abortion share, % of changes in abortion rate, out-of-state travel vs. geographic clinic availability, change in abortion rate by state, abortions over time by state, and abortion care by region overall (i.e. West, South, Midwest, Northeast). I was surprised at how much or little Roe v. Wade and local legislation impacted abortion rates in different states, for instance, some states with restrictive laws did not always have the lowest rates, and some states with more permissive legislation did not necessarily have the highest.</p>
+<p>Before this activity, I already found it difficult to define “ethical analysis and visualization” and now I almost want to say I don’t know how to. It feels like the numbers can be strung either way, in any-which way, and without input from domain experts on both sides weighing in what these numbers mean, I don’t actually know if there’s a lot. Without context of things like education, ideal child-bearing age, how many people do or don’t want families at a certain time, and wanted or unexpected pregnancy, these numbers don’t actually mean much to me because I can only imply my own bias to them, and I don’t know what the intention or culture of each geographical area is. The bounds I can draw to “acceptable” persuasive choice is one that leads a viewer to understand a lack or surplus of a statistic, where “misleading” ones would exaggerate differences through scale manipulation, omit relevant contextual variables, or imply causal relationships that the data cannot actually support.</p>
+
+<h2>Appendix: Exploration visualizations</h2>	
+
+<h5>Exploration 1</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration1.png" alt="Exploration visualization">
+</figure>
+
+<h5>Exploration 2</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration2.png" alt="Exploration visualization">
+</figure>
+
+<h5>Exploration 3</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration3.png" alt="Exploration visualization">
+</figure>
+
+<h5>Exploration 4</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration4.png" alt="Exploration visualization">
+</figure>
+
+<h5>Exploration 5</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration5.png" alt="Exploration visualization">
+</figure>
+
+<h5>Exploration 6</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration6.png" alt="Exploration visualization">
+</figure>
+
+<h5>Exploration 7</h5>
+<figure aria-label="Exploration visualization" role="img">
+	<img src="A4-assets/exploration7.png" alt="Exploration visualization">
+</figure>
+
+	</main>
+
+	<!-- Image modal/lightbox -->
+	<div id="image-modal" aria-hidden="true">
+	  <button class="close-btn" aria-label="Close enlarged image">✕</button>
+	  <img src="" alt="">
+	</div>
+
+	<script>
+// Click-to-enlarge lightbox for images inside the main content
+(function(){
+	const modal = document.getElementById('image-modal');
+	const modalImg = modal.querySelector('img');
+	const closeBtn = modal.querySelector('.close-btn');
+
+	function openModal(src, alt, ariaLabel){
+		modalImg.src = src;
+		modalImg.alt = alt || '';
+		modal.setAttribute('aria-hidden', 'false');
+		modal.classList.add('open');
+		// focus the close button for accessibility
+		closeBtn.focus();
+	}
+
+	function closeModal(){
+		modal.classList.remove('open');
+		modal.setAttribute('aria-hidden', 'true');
+		modalImg.src = '';
+	}
+
+	// Attach click handlers to images within the .middle container
+	const images = document.querySelectorAll('main.middle img');
+	images.forEach(img => {
+		img.style.cursor = 'zoom-in';
+		img.addEventListener('click', (e)=>{
+			openModal(img.src, img.alt, img.getAttribute('aria-label'));
+		});
+	});
+
+	// close interactions
+	closeBtn.addEventListener('click', closeModal);
+	modal.addEventListener('click', (e)=>{
+		if(e.target === modal) closeModal();
+	});
+	document.addEventListener('keydown', (e)=>{
+		if(e.key === 'Escape') closeModal();
+	});
+})();
+		</script>
+</body>
+</html>
