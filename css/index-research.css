@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+img.square, h1 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #fff;
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+}
+
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase; 
+  font-weight: 700;
+  font-size: 3em;
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+h2 {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase; 
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-top: 0; 
+  margin-bottom: 0.15em; 
+}
+
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+td, tr {
+  padding: 15px;
+  border: 2px solid #000;
+}
+
+table {
+  font-family: 'DM Sans', sans-serif;
+  color: #000;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  table-layout: fixed;
+}
+
+mark {
+  background-color: #fadadd;
+}
+
+a {
+  color: #000; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #000
+}
+
+.link {
+  font-size: 1.2em;
+}
+
+.title {
+  margin-top: 50%; 
+  margin-bottom: 50%; 
+}
+
+.box {
+  border-width: 2px;
+  margin-bottom: 4vh; 
+  padding: 5vh;
+  border-style: solid;
+}
+
+.box-element-left, .box-element-right {
+  border-width: 2px;
+  margin-bottom: 4vh; 
+  padding: 5vh;
+}
+
+.box-element-left {
+  border-top-style: solid;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+
+.box-element-right {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: none;
+}
+
+.left-box {
+  float: left; 
+  width: 85%; 
+}
+
+.right-box {
+  float: right; 
+  width: 15%; 
+}
+
+.box-link {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.home {
+  width: 1000px;
+}
+
+.column-left {
+  float: left; 
+  width: 40%; 
+}
+
+.column-right {
+  float: right; 
+  width: 60%; 
+}
+
+.square {
+  max-width: 40%;
+}
+
+#showContact, #showInfo, #showCare, #showJobs, #showNews, #show2022, #show2023 {
+  width: 100%;
+  margin-top: 20px;
+  display: none; 
+}
+
+#show2022, #show2023 {
+  margin-left: 20px;
+}
+
+
+#revealContact, #revealInfo, #revealCare, #revealJobs, #revealNews, #reveal2022, #reveal2023 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 0;
+  padding: 0; 
+  border: none; 
+  outline: none; 
+  background-color: Transparent;
+}
+
+#reveal2022, #reveal2023 {
+  margin-left: 20px;
+}
